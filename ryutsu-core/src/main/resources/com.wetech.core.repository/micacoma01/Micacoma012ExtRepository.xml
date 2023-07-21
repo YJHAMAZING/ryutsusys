@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wetech.core.repository.micacoma01.Micacoma012ExtRepository">
+
+    <select id="findShorijyokyo" resultType="com.wetech.ryutsumodel.model.dto.ShorijokyoDto" parameterType="Map">
+        SELECT
+            to_char(T1.shori_start_ymdhms,'YYYY/MM/DD HH24:MI:SS') AS shoriStart,    <!-- 処理開始日時 -->
+            to_char(T1.shori_end_ymdhms,'YYYY/MM/DD HH24:MI:SS') AS shoriEnd,        <!-- 処理終了日時 -->
+            T1.shori_id AS shoriId,                                                  <!-- 処理ID -->
+            T3.str2 AS shoriName,                                                    <!-- 処理名称 -->
+            T1.shori_kbn AS shoriKbn,                                                <!-- 処理区分 -->
+            T2.comshimeisei_knj || T2.comshimeimei_knj AS jikouUserName,     <!-- 実行ユーザ名 -->
+            T1.shori_status AS shoriStatus,                                          <!-- ステータス -->
+            T1.upl_file_knj AS uplFileKnj,                                           <!-- 入力ファイル名 -->
+            T1.upl_file_path AS uplFilePath,                                         <!-- 入力ファイルパス -->
+            T1.dwl_file_knj AS dwlFileKnj,                                           <!-- 出力ファイル名 -->
+            T1.dwl_file_path AS dwlFilePath,                                         <!-- 出力ファイルパス -->
+            T1.msg                                                                   <!-- メッセージ -->
+        FROM
+            ttmicshorijokyo T1                                                       <!-- 処理状況ワーク -->
+        INNER JOIN
+            tmmjinin T2                                                              <!-- 人員マスタ -->
+        ON
+            T2.comjugyoin_cod = T1.jikko_shain_cod                                   <!-- 従業員コード（実行ユーザID） -->
+        AND
+            T2.comtekiyostr_ymd <![CDATA[<=]]> #{parameter.currentDate, jdbcType=DATE}
+                                                                                     <!-- 適用開始年月日 -->
+        AND
+            T2.comtekiyoend_ymd <![CDATA[>=]]> #{parameter.currentDate, jdbcType=DATE}
+                                                                                     <!-- 適用終了年月日 -->
+        LEFT JOIN
+            tmhanyo T3                                                               <!-- 汎用マスタ -->
+        ON
+            T3.bunrui_cod = #{parameter.comBunruiCd, jdbcType=VARCHAR}               <!-- 分類コード -->
+        AND
+            T3.num1 = cast(T1.shori_kbn as integer)                                  <!-- 数字1（処理区分） -->
+        AND
+            T3.str1 = T1.shori_id                                                    <!-- 文字1（処理ID） -->
+        AND
+            T3.tekiyostr_ymd <![CDATA[<=]]> #{parameter.shoribiFrom, jdbcType=TIMESTAMP}
+                                                                                     <!-- 適用開始年月日 -->
+        AND
+            T3.tekiyoend_ymd <![CDATA[>=]]> #{parameter.shoribiFrom, jdbcType=TIMESTAMP}
+                                                                                     <!-- 適用終了年月日 -->
+        WHERE
+            T1.shori_start_ymdhms <![CDATA[>=]]> #{parameter.shoribiFrom, jdbcType=TIMESTAMP}
+                                                                                     <!-- 処理開始日時 >= 処理日From -->
+        AND
+            T1.shori_end_ymdhms <![CDATA[<=]]> #{parameter.shoribiTo, jdbcType=TIMESTAMP}
+                                                                                     <!-- 処理開始日時 <= 処理日TO -->
+        <if test="parameter.shoriKbnList != null">
+        AND
+            T1.shori_kbn                                                             <!-- 処理区分 IN (1：UPLOAD, 2：DOWNLOAD) -->
+        IN
+            <foreach collection="parameter.shoriKbnList" item="item" open="(" close=")" separator=",">
+                #{item}
+            </foreach>
+        </if>
+        <if test="parameter.statusList != null">
+        AND
+            T1.shori_status IN                                                       <!-- 処理ステータス IN (0：実行中　1：正常終了　2：エラー) -->
+            <foreach collection="parameter.statusList" item="item" open="(" close=")" separator=",">
+                #{item}
+            </foreach>
+        </if>
+
+        <if test="parameter.comTenCodList != null and parameter.comTenCodList.size() > 0">
+        AND
+            T2.comsozten_cod IN                                                      <!-- 店所コード（所属支店） -->
+          <foreach collection="parameter.comTenCodList" item="item" open="(" close=")" separator=",">
+             #{item}
+          </foreach>
+        </if>
+        <if test="parameter.jikkoShainId != null and parameter.jikkoShainId != ''">
+        AND
+            T1.jikko_shain_cod = #{parameter.jikkoShainId, jdbcType=VARCHAR}         <!-- 実行ユーザID -->
+        </if>
+        <if test="parameter.shoriId != null and parameter.shoriId != ''">
+        AND
+            T1.shori_id = #{parameter.shoriId, jdbcType=CHAR}                        <!-- 処理ID -->
+        </if>
+        ORDER BY
+            T1.shori_start_ymdhms DESC, T1.shori_id                                  <!-- 処理開始日時の新しい順 > 処理IDの昇順 -->
+        OFFSET #{parameter.pageNo}
+        LIMIT #{parameter.pageSize}
+    </select>
+
+    <select id="findShorijyokyoCount" resultType="int" parameterType="Map">
+        SELECT
+            COUNT(1)
+        FROM
+            ttmicshorijokyo T1                                                       <!-- 処理状況ワーク -->
+        INNER JOIN
+            tmmjinin T2                                                              <!-- 人員マスタ -->
+        ON
+            T2.comjugyoin_cod = T1.jikko_shain_cod                                   <!-- 従業員コード（実行ユーザID） -->
+        AND
+            T2.comtekiyostr_ymd <![CDATA[<=]]> #{parameterCount.currentDate, jdbcType=DATE}
+                                                                                     <!-- 適用開始年月日 -->
+        AND
+            T2.comtekiyoend_ymd <![CDATA[>=]]> #{parameterCount.currentDate, jdbcType=DATE}
+                                                                                     <!-- 適用終了年月日 -->
+        LEFT JOIN
+            tmhanyo T3                                                               <!-- 汎用マスタ -->
+        ON
+            T3.bunrui_cod = #{parameterCount.comBunruiCd, jdbcType=VARCHAR}          <!-- 分類コード -->
+        AND
+            T3.num1 = cast(T1.shori_kbn as integer)                                  <!-- 数字1（処理区分） -->
+        AND
+            T3.str1 = T1.shori_id                                                    <!-- 文字1（処理ID） -->
+        AND
+            T3.tekiyostr_ymd <![CDATA[<=]]> #{parameterCount.currentDate, jdbcType=DATE}
+                                                                                     <!-- 適用開始年月日 -->
+        AND
+            T3.tekiyoend_ymd <![CDATA[>=]]> #{parameterCount.currentDate, jdbcType=DATE}
+                                                                                     <!-- 適用終了年月日 -->
+        WHERE
+            T1.shori_start_ymdhms <![CDATA[>=]]> #{parameterCount.shoribiFrom, jdbcType=TIMESTAMP}
+                                                                                     <!-- 処理開始日時 >= 処理日From -->
+        AND
+            T1.shori_end_ymdhms <![CDATA[<=]]> #{parameterCount.shoribiTo, jdbcType=TIMESTAMP}
+                                                                                     <!-- 処理終了日時 <= 処理日TO -->
+        <if test="parameterCount.shoriKbnList != null">
+        AND
+            T1.shori_kbn IN                                                          <!-- 処理区分 IN (1：UPLOAD, 2：DOWNLOAD) -->
+            <foreach collection="parameterCount.shoriKbnList" item="item" open="(" close=")" separator=",">
+               #{item}
+            </foreach>
+        </if>
+        <if test="parameterCount.statusList != null">
+        AND
+            T1.shori_status IN                                                       <!-- 処理ステータス IN (0：実行中　1：正常終了　2：エラー) -->
+            <foreach collection="parameterCount.statusList" item="item" open="(" close = ")" separator = ",">
+                #{item}
+            </foreach>
+        </if>
+        <if test="parameterCount.comTenCodList != null and parameterCount.comTenCodList.size() > 0">
+        AND
+            T2.comsozten_cod IN                                                      <!-- 店所コード（所属支店） -->
+            <foreach collection="parameterCount.comTenCodList" item="item" open="(" close=")" separator = ",">
+                #{item}
+            </foreach>
+        </if>
+        <if test="parameterCount.jikkoShainId != null and parameterCount.jikkoShainId != ''">
+        AND
+           T1.jikko_shain_cod = #{parameterCount.jikkoShainId, jdbcType=VARCHAR}     <!-- 実行ユーザID -->
+        </if>
+        <if test="parameterCount.shoriId != null and parameterCount.shoriId != ''">
+        AND
+           T1.shori_id = #{parameterCount.shoriId, jdbcType=CHAR}                    <!-- 処理ID -->
+        </if>
+    </select>
+
+</mapper>

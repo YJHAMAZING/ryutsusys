@@ -1,0 +1,946 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wetech.ryutsumodel.model.mapper.TmmsoshikiMapper">
+  <resultMap id="BaseResultMap" type="com.wetech.ryutsumodel.model.entity.Tmmsoshiki">
+    <!--@mbg.generated-->
+    <!--@Table tmmsoshiki-->
+    <id column="comgyomu_kbn" jdbcType="SMALLINT" property="comgyomuKbn" />
+    <id column="comten_cod" jdbcType="CHAR" property="comtenCod" />
+    <id column="comsosknm11_knj" jdbcType="VARCHAR" property="comsosknm11Knj" />
+    <id column="comtekiyostr_ymd" jdbcType="DATE" property="comtekiyostrYmd" />
+    <result column="comsosk1_cod" jdbcType="CHAR" property="comsosk1Cod" />
+    <result column="comsosknm21_knj" jdbcType="VARCHAR" property="comsosknm21Knj" />
+    <result column="comsosknm11_kna" jdbcType="VARCHAR" property="comsosknm11Kna" />
+    <result column="comsosknm21_kna" jdbcType="VARCHAR" property="comsosknm21Kna" />
+    <result column="comhyojijun1_num" jdbcType="INTEGER" property="comhyojijun1Num" />
+    <result column="comsosk2_cod" jdbcType="CHAR" property="comsosk2Cod" />
+    <result column="comsosknm12_knj" jdbcType="VARCHAR" property="comsosknm12Knj" />
+    <result column="comsosknm22_knj" jdbcType="VARCHAR" property="comsosknm22Knj" />
+    <result column="comsosknm12_kna" jdbcType="VARCHAR" property="comsosknm12Kna" />
+    <result column="comsosknm22_kna" jdbcType="VARCHAR" property="comsosknm22Kna" />
+    <result column="comhyojijun2_num" jdbcType="INTEGER" property="comhyojijun2Num" />
+    <result column="comsosk3_cod" jdbcType="CHAR" property="comsosk3Cod" />
+    <result column="comsosknm13_knj" jdbcType="VARCHAR" property="comsosknm13Knj" />
+    <result column="comsosknm23_knj" jdbcType="VARCHAR" property="comsosknm23Knj" />
+    <result column="comsosknm13_kna" jdbcType="VARCHAR" property="comsosknm13Kna" />
+    <result column="comsosknm23_kna" jdbcType="VARCHAR" property="comsosknm23Kna" />
+    <result column="comhyojijun3_num" jdbcType="INTEGER" property="comhyojijun3Num" />
+    <result column="comsosk4_cod" jdbcType="CHAR" property="comsosk4Cod" />
+    <result column="comsosknm14_knj" jdbcType="VARCHAR" property="comsosknm14Knj" />
+    <result column="comsosknm24_knj" jdbcType="VARCHAR" property="comsosknm24Knj" />
+    <result column="comsosknm14_kna" jdbcType="VARCHAR" property="comsosknm14Kna" />
+    <result column="comsosknm24_kna" jdbcType="VARCHAR" property="comsosknm24Kna" />
+    <result column="comhyojijun4_num" jdbcType="INTEGER" property="comhyojijun4Num" />
+    <result column="comsosk5_cod" jdbcType="CHAR" property="comsosk5Cod" />
+    <result column="comsosknm15_knj" jdbcType="VARCHAR" property="comsosknm15Knj" />
+    <result column="comsosknm25_knj" jdbcType="VARCHAR" property="comsosknm25Knj" />
+    <result column="comsosknm15_kna" jdbcType="VARCHAR" property="comsosknm15Kna" />
+    <result column="comsosknm25_kna" jdbcType="VARCHAR" property="comsosknm25Kna" />
+    <result column="comhyojijun5_num" jdbcType="INTEGER" property="comhyojijun5Num" />
+    <result column="comsosk6_cod" jdbcType="CHAR" property="comsosk6Cod" />
+    <result column="comsosknm16_knj" jdbcType="VARCHAR" property="comsosknm16Knj" />
+    <result column="comsosknm26_knj" jdbcType="VARCHAR" property="comsosknm26Knj" />
+    <result column="comsosknm16_kna" jdbcType="VARCHAR" property="comsosknm16Kna" />
+    <result column="comsosknm26_kna" jdbcType="VARCHAR" property="comsosknm26Kna" />
+    <result column="comhyojijun6_num" jdbcType="INTEGER" property="comhyojijun6Num" />
+    <result column="comsosk7_cod" jdbcType="CHAR" property="comsosk7Cod" />
+    <result column="comsosknm17_knj" jdbcType="VARCHAR" property="comsosknm17Knj" />
+    <result column="comsosknm27_knj" jdbcType="VARCHAR" property="comsosknm27Knj" />
+    <result column="comsosknm17_kna" jdbcType="VARCHAR" property="comsosknm17Kna" />
+    <result column="comsosknm27_kna" jdbcType="VARCHAR" property="comsosknm27Kna" />
+    <result column="comhyojijun7_num" jdbcType="INTEGER" property="comhyojijun7Num" />
+    <result column="comsosk8_cod" jdbcType="CHAR" property="comsosk8Cod" />
+    <result column="comsosknm18_knj" jdbcType="VARCHAR" property="comsosknm18Knj" />
+    <result column="comsosknm28_knj" jdbcType="VARCHAR" property="comsosknm28Knj" />
+    <result column="comsosknm18_kna" jdbcType="VARCHAR" property="comsosknm18Kna" />
+    <result column="comsosknm28_kna" jdbcType="VARCHAR" property="comsosknm28Kna" />
+    <result column="comhyojijun8_num" jdbcType="INTEGER" property="comhyojijun8Num" />
+    <result column="comsosk9_cod" jdbcType="CHAR" property="comsosk9Cod" />
+    <result column="comsosknm19_knj" jdbcType="VARCHAR" property="comsosknm19Knj" />
+    <result column="comsosknm29_knj" jdbcType="VARCHAR" property="comsosknm29Knj" />
+    <result column="comsosknm19_kna" jdbcType="VARCHAR" property="comsosknm19Kna" />
+    <result column="comsosknm29_kna" jdbcType="VARCHAR" property="comsosknm29Kna" />
+    <result column="comhyojijun9_num" jdbcType="INTEGER" property="comhyojijun9Num" />
+    <result column="comsosk10_cod" jdbcType="CHAR" property="comsosk10Cod" />
+    <result column="comsosknm110_knj" jdbcType="VARCHAR" property="comsosknm110Knj" />
+    <result column="comsosknm210_knj" jdbcType="VARCHAR" property="comsosknm210Knj" />
+    <result column="comsosknm110_kna" jdbcType="VARCHAR" property="comsosknm110Kna" />
+    <result column="comsosknm210_kna" jdbcType="VARCHAR" property="comsosknm210Kna" />
+    <result column="comhyojijun10_num" jdbcType="INTEGER" property="comhyojijun10Num" />
+    <result column="comyobi_kbn" jdbcType="CHAR" property="comyobiKbn" />
+    <result column="comtekiyoend_ymd" jdbcType="DATE" property="comtekiyoendYmd" />
+    <result column="comcrt_ymd" jdbcType="DATE" property="comcrtYmd" />
+    <result column="comcrtshain_cod" jdbcType="CHAR" property="comcrtshainCod" />
+    <result column="comupd_ymd" jdbcType="DATE" property="comupdYmd" />
+    <result column="comupdshain_cod" jdbcType="CHAR" property="comupdshainCod" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+      This element is automatically generated by MyBatis Generator, do not modify.
+      This element was generated on Wed Sep 21 18:34:49 JST 2022.
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+      This element is automatically generated by MyBatis Generator, do not modify.
+      This element was generated on Wed Sep 21 18:34:49 JST 2022.
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    comgyomu_kbn, comten_cod, comsosknm11_knj, comtekiyostr_ymd, comsosk1_cod, comsosknm21_knj, 
+    comsosknm11_kna, comsosknm21_kna, comhyojijun1_num, comsosk2_cod, comsosknm12_knj, 
+    comsosknm22_knj, comsosknm12_kna, comsosknm22_kna, comhyojijun2_num, comsosk3_cod, 
+    comsosknm13_knj, comsosknm23_knj, comsosknm13_kna, comsosknm23_kna, comhyojijun3_num, 
+    comsosk4_cod, comsosknm14_knj, comsosknm24_knj, comsosknm14_kna, comsosknm24_kna, 
+    comhyojijun4_num, comsosk5_cod, comsosknm15_knj, comsosknm25_knj, comsosknm15_kna, 
+    comsosknm25_kna, comhyojijun5_num, comsosk6_cod, comsosknm16_knj, comsosknm26_knj, 
+    comsosknm16_kna, comsosknm26_kna, comhyojijun6_num, comsosk7_cod, comsosknm17_knj, 
+    comsosknm27_knj, comsosknm17_kna, comsosknm27_kna, comhyojijun7_num, comsosk8_cod, 
+    comsosknm18_knj, comsosknm28_knj, comsosknm18_kna, comsosknm28_kna, comhyojijun8_num, 
+    comsosk9_cod, comsosknm19_knj, comsosknm29_knj, comsosknm19_kna, comsosknm29_kna, 
+    comhyojijun9_num, comsosk10_cod, comsosknm110_knj, comsosknm210_knj, comsosknm110_kna, 
+    comsosknm210_kna, comhyojijun10_num, comyobi_kbn, comtekiyoend_ymd, comcrt_ymd, comcrtshain_cod, 
+    comupd_ymd, comupdshain_cod
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="map" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from tmmsoshiki
+    where comgyomu_kbn = #{comgyomuKbn,jdbcType=SMALLINT}
+      and comten_cod = #{comtenCod,jdbcType=CHAR}
+      and comsosknm11_knj = #{comsosknm11Knj,jdbcType=VARCHAR}
+      and comtekiyostr_ymd = #{comtekiyostrYmd,jdbcType=DATE}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="map">
+    <!--@mbg.generated-->
+    delete from tmmsoshiki
+    where comgyomu_kbn = #{comgyomuKbn,jdbcType=SMALLINT}
+      and comten_cod = #{comtenCod,jdbcType=CHAR}
+      and comsosknm11_knj = #{comsosknm11Knj,jdbcType=VARCHAR}
+      and comtekiyostr_ymd = #{comtekiyostrYmd,jdbcType=DATE}
+  </delete>
+  <insert id="insert" parameterType="com.wetech.ryutsumodel.model.entity.Tmmsoshiki">
+    <!--@mbg.generated-->
+    insert into tmmsoshiki (comgyomu_kbn, comten_cod, comsosknm11_knj, 
+      comtekiyostr_ymd, comsosk1_cod, comsosknm21_knj, 
+      comsosknm11_kna, comsosknm21_kna, comhyojijun1_num, 
+      comsosk2_cod, comsosknm12_knj, comsosknm22_knj, 
+      comsosknm12_kna, comsosknm22_kna, comhyojijun2_num, 
+      comsosk3_cod, comsosknm13_knj, comsosknm23_knj, 
+      comsosknm13_kna, comsosknm23_kna, comhyojijun3_num, 
+      comsosk4_cod, comsosknm14_knj, comsosknm24_knj, 
+      comsosknm14_kna, comsosknm24_kna, comhyojijun4_num, 
+      comsosk5_cod, comsosknm15_knj, comsosknm25_knj, 
+      comsosknm15_kna, comsosknm25_kna, comhyojijun5_num, 
+      comsosk6_cod, comsosknm16_knj, comsosknm26_knj, 
+      comsosknm16_kna, comsosknm26_kna, comhyojijun6_num, 
+      comsosk7_cod, comsosknm17_knj, comsosknm27_knj, 
+      comsosknm17_kna, comsosknm27_kna, comhyojijun7_num, 
+      comsosk8_cod, comsosknm18_knj, comsosknm28_knj, 
+      comsosknm18_kna, comsosknm28_kna, comhyojijun8_num, 
+      comsosk9_cod, comsosknm19_knj, comsosknm29_knj, 
+      comsosknm19_kna, comsosknm29_kna, comhyojijun9_num, 
+      comsosk10_cod, comsosknm110_knj, comsosknm210_knj, 
+      comsosknm110_kna, comsosknm210_kna, comhyojijun10_num, 
+      comyobi_kbn, comtekiyoend_ymd, comcrt_ymd, 
+      comcrtshain_cod, comupd_ymd, comupdshain_cod
+      )
+    values (#{comgyomuKbn,jdbcType=SMALLINT}, #{comtenCod,jdbcType=CHAR}, #{comsosknm11Knj,jdbcType=VARCHAR}, 
+      #{comtekiyostrYmd,jdbcType=DATE}, #{comsosk1Cod,jdbcType=CHAR}, #{comsosknm21Knj,jdbcType=VARCHAR}, 
+      #{comsosknm11Kna,jdbcType=VARCHAR}, #{comsosknm21Kna,jdbcType=VARCHAR}, #{comhyojijun1Num,jdbcType=INTEGER}, 
+      #{comsosk2Cod,jdbcType=CHAR}, #{comsosknm12Knj,jdbcType=VARCHAR}, #{comsosknm22Knj,jdbcType=VARCHAR}, 
+      #{comsosknm12Kna,jdbcType=VARCHAR}, #{comsosknm22Kna,jdbcType=VARCHAR}, #{comhyojijun2Num,jdbcType=INTEGER}, 
+      #{comsosk3Cod,jdbcType=CHAR}, #{comsosknm13Knj,jdbcType=VARCHAR}, #{comsosknm23Knj,jdbcType=VARCHAR}, 
+      #{comsosknm13Kna,jdbcType=VARCHAR}, #{comsosknm23Kna,jdbcType=VARCHAR}, #{comhyojijun3Num,jdbcType=INTEGER}, 
+      #{comsosk4Cod,jdbcType=CHAR}, #{comsosknm14Knj,jdbcType=VARCHAR}, #{comsosknm24Knj,jdbcType=VARCHAR}, 
+      #{comsosknm14Kna,jdbcType=VARCHAR}, #{comsosknm24Kna,jdbcType=VARCHAR}, #{comhyojijun4Num,jdbcType=INTEGER}, 
+      #{comsosk5Cod,jdbcType=CHAR}, #{comsosknm15Knj,jdbcType=VARCHAR}, #{comsosknm25Knj,jdbcType=VARCHAR}, 
+      #{comsosknm15Kna,jdbcType=VARCHAR}, #{comsosknm25Kna,jdbcType=VARCHAR}, #{comhyojijun5Num,jdbcType=INTEGER}, 
+      #{comsosk6Cod,jdbcType=CHAR}, #{comsosknm16Knj,jdbcType=VARCHAR}, #{comsosknm26Knj,jdbcType=VARCHAR}, 
+      #{comsosknm16Kna,jdbcType=VARCHAR}, #{comsosknm26Kna,jdbcType=VARCHAR}, #{comhyojijun6Num,jdbcType=INTEGER}, 
+      #{comsosk7Cod,jdbcType=CHAR}, #{comsosknm17Knj,jdbcType=VARCHAR}, #{comsosknm27Knj,jdbcType=VARCHAR}, 
+      #{comsosknm17Kna,jdbcType=VARCHAR}, #{comsosknm27Kna,jdbcType=VARCHAR}, #{comhyojijun7Num,jdbcType=INTEGER}, 
+      #{comsosk8Cod,jdbcType=CHAR}, #{comsosknm18Knj,jdbcType=VARCHAR}, #{comsosknm28Knj,jdbcType=VARCHAR}, 
+      #{comsosknm18Kna,jdbcType=VARCHAR}, #{comsosknm28Kna,jdbcType=VARCHAR}, #{comhyojijun8Num,jdbcType=INTEGER}, 
+      #{comsosk9Cod,jdbcType=CHAR}, #{comsosknm19Knj,jdbcType=VARCHAR}, #{comsosknm29Knj,jdbcType=VARCHAR}, 
+      #{comsosknm19Kna,jdbcType=VARCHAR}, #{comsosknm29Kna,jdbcType=VARCHAR}, #{comhyojijun9Num,jdbcType=INTEGER}, 
+      #{comsosk10Cod,jdbcType=CHAR}, #{comsosknm110Knj,jdbcType=VARCHAR}, #{comsosknm210Knj,jdbcType=VARCHAR}, 
+      #{comsosknm110Kna,jdbcType=VARCHAR}, #{comsosknm210Kna,jdbcType=VARCHAR}, #{comhyojijun10Num,jdbcType=INTEGER}, 
+      #{comyobiKbn,jdbcType=CHAR}, #{comtekiyoendYmd,jdbcType=DATE}, #{comcrtYmd,jdbcType=DATE}, 
+      #{comcrtshainCod,jdbcType=CHAR}, #{comupdYmd,jdbcType=DATE}, #{comupdshainCod,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.wetech.ryutsumodel.model.entity.Tmmsoshiki">
+    <!--@mbg.generated-->
+    insert into tmmsoshiki
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="comgyomuKbn != null">
+        comgyomu_kbn,
+      </if>
+      <if test="comtenCod != null">
+        comten_cod,
+      </if>
+      <if test="comsosknm11Knj != null">
+        comsosknm11_knj,
+      </if>
+      <if test="comtekiyostrYmd != null">
+        comtekiyostr_ymd,
+      </if>
+      <if test="comsosk1Cod != null">
+        comsosk1_cod,
+      </if>
+      <if test="comsosknm21Knj != null">
+        comsosknm21_knj,
+      </if>
+      <if test="comsosknm11Kna != null">
+        comsosknm11_kna,
+      </if>
+      <if test="comsosknm21Kna != null">
+        comsosknm21_kna,
+      </if>
+      <if test="comhyojijun1Num != null">
+        comhyojijun1_num,
+      </if>
+      <if test="comsosk2Cod != null">
+        comsosk2_cod,
+      </if>
+      <if test="comsosknm12Knj != null">
+        comsosknm12_knj,
+      </if>
+      <if test="comsosknm22Knj != null">
+        comsosknm22_knj,
+      </if>
+      <if test="comsosknm12Kna != null">
+        comsosknm12_kna,
+      </if>
+      <if test="comsosknm22Kna != null">
+        comsosknm22_kna,
+      </if>
+      <if test="comhyojijun2Num != null">
+        comhyojijun2_num,
+      </if>
+      <if test="comsosk3Cod != null">
+        comsosk3_cod,
+      </if>
+      <if test="comsosknm13Knj != null">
+        comsosknm13_knj,
+      </if>
+      <if test="comsosknm23Knj != null">
+        comsosknm23_knj,
+      </if>
+      <if test="comsosknm13Kna != null">
+        comsosknm13_kna,
+      </if>
+      <if test="comsosknm23Kna != null">
+        comsosknm23_kna,
+      </if>
+      <if test="comhyojijun3Num != null">
+        comhyojijun3_num,
+      </if>
+      <if test="comsosk4Cod != null">
+        comsosk4_cod,
+      </if>
+      <if test="comsosknm14Knj != null">
+        comsosknm14_knj,
+      </if>
+      <if test="comsosknm24Knj != null">
+        comsosknm24_knj,
+      </if>
+      <if test="comsosknm14Kna != null">
+        comsosknm14_kna,
+      </if>
+      <if test="comsosknm24Kna != null">
+        comsosknm24_kna,
+      </if>
+      <if test="comhyojijun4Num != null">
+        comhyojijun4_num,
+      </if>
+      <if test="comsosk5Cod != null">
+        comsosk5_cod,
+      </if>
+      <if test="comsosknm15Knj != null">
+        comsosknm15_knj,
+      </if>
+      <if test="comsosknm25Knj != null">
+        comsosknm25_knj,
+      </if>
+      <if test="comsosknm15Kna != null">
+        comsosknm15_kna,
+      </if>
+      <if test="comsosknm25Kna != null">
+        comsosknm25_kna,
+      </if>
+      <if test="comhyojijun5Num != null">
+        comhyojijun5_num,
+      </if>
+      <if test="comsosk6Cod != null">
+        comsosk6_cod,
+      </if>
+      <if test="comsosknm16Knj != null">
+        comsosknm16_knj,
+      </if>
+      <if test="comsosknm26Knj != null">
+        comsosknm26_knj,
+      </if>
+      <if test="comsosknm16Kna != null">
+        comsosknm16_kna,
+      </if>
+      <if test="comsosknm26Kna != null">
+        comsosknm26_kna,
+      </if>
+      <if test="comhyojijun6Num != null">
+        comhyojijun6_num,
+      </if>
+      <if test="comsosk7Cod != null">
+        comsosk7_cod,
+      </if>
+      <if test="comsosknm17Knj != null">
+        comsosknm17_knj,
+      </if>
+      <if test="comsosknm27Knj != null">
+        comsosknm27_knj,
+      </if>
+      <if test="comsosknm17Kna != null">
+        comsosknm17_kna,
+      </if>
+      <if test="comsosknm27Kna != null">
+        comsosknm27_kna,
+      </if>
+      <if test="comhyojijun7Num != null">
+        comhyojijun7_num,
+      </if>
+      <if test="comsosk8Cod != null">
+        comsosk8_cod,
+      </if>
+      <if test="comsosknm18Knj != null">
+        comsosknm18_knj,
+      </if>
+      <if test="comsosknm28Knj != null">
+        comsosknm28_knj,
+      </if>
+      <if test="comsosknm18Kna != null">
+        comsosknm18_kna,
+      </if>
+      <if test="comsosknm28Kna != null">
+        comsosknm28_kna,
+      </if>
+      <if test="comhyojijun8Num != null">
+        comhyojijun8_num,
+      </if>
+      <if test="comsosk9Cod != null">
+        comsosk9_cod,
+      </if>
+      <if test="comsosknm19Knj != null">
+        comsosknm19_knj,
+      </if>
+      <if test="comsosknm29Knj != null">
+        comsosknm29_knj,
+      </if>
+      <if test="comsosknm19Kna != null">
+        comsosknm19_kna,
+      </if>
+      <if test="comsosknm29Kna != null">
+        comsosknm29_kna,
+      </if>
+      <if test="comhyojijun9Num != null">
+        comhyojijun9_num,
+      </if>
+      <if test="comsosk10Cod != null">
+        comsosk10_cod,
+      </if>
+      <if test="comsosknm110Knj != null">
+        comsosknm110_knj,
+      </if>
+      <if test="comsosknm210Knj != null">
+        comsosknm210_knj,
+      </if>
+      <if test="comsosknm110Kna != null">
+        comsosknm110_kna,
+      </if>
+      <if test="comsosknm210Kna != null">
+        comsosknm210_kna,
+      </if>
+      <if test="comhyojijun10Num != null">
+        comhyojijun10_num,
+      </if>
+      <if test="comyobiKbn != null">
+        comyobi_kbn,
+      </if>
+      <if test="comtekiyoendYmd != null">
+        comtekiyoend_ymd,
+      </if>
+      <if test="comcrtYmd != null">
+        comcrt_ymd,
+      </if>
+      <if test="comcrtshainCod != null">
+        comcrtshain_cod,
+      </if>
+      <if test="comupdYmd != null">
+        comupd_ymd,
+      </if>
+      <if test="comupdshainCod != null">
+        comupdshain_cod,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="comgyomuKbn != null">
+        #{comgyomuKbn,jdbcType=SMALLINT},
+      </if>
+      <if test="comtenCod != null">
+        #{comtenCod,jdbcType=CHAR},
+      </if>
+      <if test="comsosknm11Knj != null">
+        #{comsosknm11Knj,jdbcType=VARCHAR},
+      </if>
+      <if test="comtekiyostrYmd != null">
+        #{comtekiyostrYmd,jdbcType=DATE},
+      </if>
+      <if test="comsosk1Cod != null">
+        #{comsosk1Cod,jdbcType=CHAR},
+      </if>
+      <if test="comsosknm21Knj != null">
+        #{comsosknm21Knj,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm11Kna != null">
+        #{comsosknm11Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm21Kna != null">
+        #{comsosknm21Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comhyojijun1Num != null">
+        #{comhyojijun1Num,jdbcType=INTEGER},
+      </if>
+      <if test="comsosk2Cod != null">
+        #{comsosk2Cod,jdbcType=CHAR},
+      </if>
+      <if test="comsosknm12Knj != null">
+        #{comsosknm12Knj,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm22Knj != null">
+        #{comsosknm22Knj,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm12Kna != null">
+        #{comsosknm12Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm22Kna != null">
+        #{comsosknm22Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comhyojijun2Num != null">
+        #{comhyojijun2Num,jdbcType=INTEGER},
+      </if>
+      <if test="comsosk3Cod != null">
+        #{comsosk3Cod,jdbcType=CHAR},
+      </if>
+      <if test="comsosknm13Knj != null">
+        #{comsosknm13Knj,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm23Knj != null">
+        #{comsosknm23Knj,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm13Kna != null">
+        #{comsosknm13Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm23Kna != null">
+        #{comsosknm23Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comhyojijun3Num != null">
+        #{comhyojijun3Num,jdbcType=INTEGER},
+      </if>
+      <if test="comsosk4Cod != null">
+        #{comsosk4Cod,jdbcType=CHAR},
+      </if>
+      <if test="comsosknm14Knj != null">
+        #{comsosknm14Knj,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm24Knj != null">
+        #{comsosknm24Knj,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm14Kna != null">
+        #{comsosknm14Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm24Kna != null">
+        #{comsosknm24Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comhyojijun4Num != null">
+        #{comhyojijun4Num,jdbcType=INTEGER},
+      </if>
+      <if test="comsosk5Cod != null">
+        #{comsosk5Cod,jdbcType=CHAR},
+      </if>
+      <if test="comsosknm15Knj != null">
+        #{comsosknm15Knj,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm25Knj != null">
+        #{comsosknm25Knj,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm15Kna != null">
+        #{comsosknm15Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm25Kna != null">
+        #{comsosknm25Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comhyojijun5Num != null">
+        #{comhyojijun5Num,jdbcType=INTEGER},
+      </if>
+      <if test="comsosk6Cod != null">
+        #{comsosk6Cod,jdbcType=CHAR},
+      </if>
+      <if test="comsosknm16Knj != null">
+        #{comsosknm16Knj,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm26Knj != null">
+        #{comsosknm26Knj,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm16Kna != null">
+        #{comsosknm16Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm26Kna != null">
+        #{comsosknm26Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comhyojijun6Num != null">
+        #{comhyojijun6Num,jdbcType=INTEGER},
+      </if>
+      <if test="comsosk7Cod != null">
+        #{comsosk7Cod,jdbcType=CHAR},
+      </if>
+      <if test="comsosknm17Knj != null">
+        #{comsosknm17Knj,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm27Knj != null">
+        #{comsosknm27Knj,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm17Kna != null">
+        #{comsosknm17Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm27Kna != null">
+        #{comsosknm27Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comhyojijun7Num != null">
+        #{comhyojijun7Num,jdbcType=INTEGER},
+      </if>
+      <if test="comsosk8Cod != null">
+        #{comsosk8Cod,jdbcType=CHAR},
+      </if>
+      <if test="comsosknm18Knj != null">
+        #{comsosknm18Knj,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm28Knj != null">
+        #{comsosknm28Knj,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm18Kna != null">
+        #{comsosknm18Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm28Kna != null">
+        #{comsosknm28Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comhyojijun8Num != null">
+        #{comhyojijun8Num,jdbcType=INTEGER},
+      </if>
+      <if test="comsosk9Cod != null">
+        #{comsosk9Cod,jdbcType=CHAR},
+      </if>
+      <if test="comsosknm19Knj != null">
+        #{comsosknm19Knj,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm29Knj != null">
+        #{comsosknm29Knj,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm19Kna != null">
+        #{comsosknm19Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm29Kna != null">
+        #{comsosknm29Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comhyojijun9Num != null">
+        #{comhyojijun9Num,jdbcType=INTEGER},
+      </if>
+      <if test="comsosk10Cod != null">
+        #{comsosk10Cod,jdbcType=CHAR},
+      </if>
+      <if test="comsosknm110Knj != null">
+        #{comsosknm110Knj,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm210Knj != null">
+        #{comsosknm210Knj,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm110Kna != null">
+        #{comsosknm110Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm210Kna != null">
+        #{comsosknm210Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comhyojijun10Num != null">
+        #{comhyojijun10Num,jdbcType=INTEGER},
+      </if>
+      <if test="comyobiKbn != null">
+        #{comyobiKbn,jdbcType=CHAR},
+      </if>
+      <if test="comtekiyoendYmd != null">
+        #{comtekiyoendYmd,jdbcType=DATE},
+      </if>
+      <if test="comcrtYmd != null">
+        #{comcrtYmd,jdbcType=DATE},
+      </if>
+      <if test="comcrtshainCod != null">
+        #{comcrtshainCod,jdbcType=CHAR},
+      </if>
+      <if test="comupdYmd != null">
+        #{comupdYmd,jdbcType=DATE},
+      </if>
+      <if test="comupdshainCod != null">
+        #{comupdshainCod,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wetech.ryutsumodel.model.entity.Tmmsoshiki">
+    <!--@mbg.generated-->
+    update tmmsoshiki
+    <set>
+      <if test="comsosk1Cod != null">
+        comsosk1_cod = #{comsosk1Cod,jdbcType=CHAR},
+      </if>
+      <if test="comsosknm21Knj != null">
+        comsosknm21_knj = #{comsosknm21Knj,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm11Kna != null">
+        comsosknm11_kna = #{comsosknm11Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm21Kna != null">
+        comsosknm21_kna = #{comsosknm21Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comhyojijun1Num != null">
+        comhyojijun1_num = #{comhyojijun1Num,jdbcType=INTEGER},
+      </if>
+      <if test="comsosk2Cod != null">
+        comsosk2_cod = #{comsosk2Cod,jdbcType=CHAR},
+      </if>
+      <if test="comsosknm12Knj != null">
+        comsosknm12_knj = #{comsosknm12Knj,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm22Knj != null">
+        comsosknm22_knj = #{comsosknm22Knj,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm12Kna != null">
+        comsosknm12_kna = #{comsosknm12Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm22Kna != null">
+        comsosknm22_kna = #{comsosknm22Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comhyojijun2Num != null">
+        comhyojijun2_num = #{comhyojijun2Num,jdbcType=INTEGER},
+      </if>
+      <if test="comsosk3Cod != null">
+        comsosk3_cod = #{comsosk3Cod,jdbcType=CHAR},
+      </if>
+      <if test="comsosknm13Knj != null">
+        comsosknm13_knj = #{comsosknm13Knj,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm23Knj != null">
+        comsosknm23_knj = #{comsosknm23Knj,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm13Kna != null">
+        comsosknm13_kna = #{comsosknm13Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm23Kna != null">
+        comsosknm23_kna = #{comsosknm23Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comhyojijun3Num != null">
+        comhyojijun3_num = #{comhyojijun3Num,jdbcType=INTEGER},
+      </if>
+      <if test="comsosk4Cod != null">
+        comsosk4_cod = #{comsosk4Cod,jdbcType=CHAR},
+      </if>
+      <if test="comsosknm14Knj != null">
+        comsosknm14_knj = #{comsosknm14Knj,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm24Knj != null">
+        comsosknm24_knj = #{comsosknm24Knj,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm14Kna != null">
+        comsosknm14_kna = #{comsosknm14Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm24Kna != null">
+        comsosknm24_kna = #{comsosknm24Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comhyojijun4Num != null">
+        comhyojijun4_num = #{comhyojijun4Num,jdbcType=INTEGER},
+      </if>
+      <if test="comsosk5Cod != null">
+        comsosk5_cod = #{comsosk5Cod,jdbcType=CHAR},
+      </if>
+      <if test="comsosknm15Knj != null">
+        comsosknm15_knj = #{comsosknm15Knj,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm25Knj != null">
+        comsosknm25_knj = #{comsosknm25Knj,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm15Kna != null">
+        comsosknm15_kna = #{comsosknm15Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm25Kna != null">
+        comsosknm25_kna = #{comsosknm25Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comhyojijun5Num != null">
+        comhyojijun5_num = #{comhyojijun5Num,jdbcType=INTEGER},
+      </if>
+      <if test="comsosk6Cod != null">
+        comsosk6_cod = #{comsosk6Cod,jdbcType=CHAR},
+      </if>
+      <if test="comsosknm16Knj != null">
+        comsosknm16_knj = #{comsosknm16Knj,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm26Knj != null">
+        comsosknm26_knj = #{comsosknm26Knj,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm16Kna != null">
+        comsosknm16_kna = #{comsosknm16Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm26Kna != null">
+        comsosknm26_kna = #{comsosknm26Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comhyojijun6Num != null">
+        comhyojijun6_num = #{comhyojijun6Num,jdbcType=INTEGER},
+      </if>
+      <if test="comsosk7Cod != null">
+        comsosk7_cod = #{comsosk7Cod,jdbcType=CHAR},
+      </if>
+      <if test="comsosknm17Knj != null">
+        comsosknm17_knj = #{comsosknm17Knj,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm27Knj != null">
+        comsosknm27_knj = #{comsosknm27Knj,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm17Kna != null">
+        comsosknm17_kna = #{comsosknm17Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm27Kna != null">
+        comsosknm27_kna = #{comsosknm27Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comhyojijun7Num != null">
+        comhyojijun7_num = #{comhyojijun7Num,jdbcType=INTEGER},
+      </if>
+      <if test="comsosk8Cod != null">
+        comsosk8_cod = #{comsosk8Cod,jdbcType=CHAR},
+      </if>
+      <if test="comsosknm18Knj != null">
+        comsosknm18_knj = #{comsosknm18Knj,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm28Knj != null">
+        comsosknm28_knj = #{comsosknm28Knj,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm18Kna != null">
+        comsosknm18_kna = #{comsosknm18Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm28Kna != null">
+        comsosknm28_kna = #{comsosknm28Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comhyojijun8Num != null">
+        comhyojijun8_num = #{comhyojijun8Num,jdbcType=INTEGER},
+      </if>
+      <if test="comsosk9Cod != null">
+        comsosk9_cod = #{comsosk9Cod,jdbcType=CHAR},
+      </if>
+      <if test="comsosknm19Knj != null">
+        comsosknm19_knj = #{comsosknm19Knj,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm29Knj != null">
+        comsosknm29_knj = #{comsosknm29Knj,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm19Kna != null">
+        comsosknm19_kna = #{comsosknm19Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm29Kna != null">
+        comsosknm29_kna = #{comsosknm29Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comhyojijun9Num != null">
+        comhyojijun9_num = #{comhyojijun9Num,jdbcType=INTEGER},
+      </if>
+      <if test="comsosk10Cod != null">
+        comsosk10_cod = #{comsosk10Cod,jdbcType=CHAR},
+      </if>
+      <if test="comsosknm110Knj != null">
+        comsosknm110_knj = #{comsosknm110Knj,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm210Knj != null">
+        comsosknm210_knj = #{comsosknm210Knj,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm110Kna != null">
+        comsosknm110_kna = #{comsosknm110Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comsosknm210Kna != null">
+        comsosknm210_kna = #{comsosknm210Kna,jdbcType=VARCHAR},
+      </if>
+      <if test="comhyojijun10Num != null">
+        comhyojijun10_num = #{comhyojijun10Num,jdbcType=INTEGER},
+      </if>
+      <if test="comyobiKbn != null">
+        comyobi_kbn = #{comyobiKbn,jdbcType=CHAR},
+      </if>
+      <if test="comtekiyoendYmd != null">
+        comtekiyoend_ymd = #{comtekiyoendYmd,jdbcType=DATE},
+      </if>
+      <if test="comcrtYmd != null">
+        comcrt_ymd = #{comcrtYmd,jdbcType=DATE},
+      </if>
+      <if test="comcrtshainCod != null">
+        comcrtshain_cod = #{comcrtshainCod,jdbcType=CHAR},
+      </if>
+      <if test="comupdYmd != null">
+        comupd_ymd = #{comupdYmd,jdbcType=DATE},
+      </if>
+      <if test="comupdshainCod != null">
+        comupdshain_cod = #{comupdshainCod,jdbcType=CHAR},
+      </if>
+    </set>
+    where comgyomu_kbn = #{comgyomuKbn,jdbcType=SMALLINT}
+      and comten_cod = #{comtenCod,jdbcType=CHAR}
+      and comsosknm11_knj = #{comsosknm11Knj,jdbcType=VARCHAR}
+      and comtekiyostr_ymd = #{comtekiyostrYmd,jdbcType=DATE}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wetech.ryutsumodel.model.entity.Tmmsoshiki">
+    <!--@mbg.generated-->
+    update tmmsoshiki
+    set comsosk1_cod = #{comsosk1Cod,jdbcType=CHAR},
+      comsosknm21_knj = #{comsosknm21Knj,jdbcType=VARCHAR},
+      comsosknm11_kna = #{comsosknm11Kna,jdbcType=VARCHAR},
+      comsosknm21_kna = #{comsosknm21Kna,jdbcType=VARCHAR},
+      comhyojijun1_num = #{comhyojijun1Num,jdbcType=INTEGER},
+      comsosk2_cod = #{comsosk2Cod,jdbcType=CHAR},
+      comsosknm12_knj = #{comsosknm12Knj,jdbcType=VARCHAR},
+      comsosknm22_knj = #{comsosknm22Knj,jdbcType=VARCHAR},
+      comsosknm12_kna = #{comsosknm12Kna,jdbcType=VARCHAR},
+      comsosknm22_kna = #{comsosknm22Kna,jdbcType=VARCHAR},
+      comhyojijun2_num = #{comhyojijun2Num,jdbcType=INTEGER},
+      comsosk3_cod = #{comsosk3Cod,jdbcType=CHAR},
+      comsosknm13_knj = #{comsosknm13Knj,jdbcType=VARCHAR},
+      comsosknm23_knj = #{comsosknm23Knj,jdbcType=VARCHAR},
+      comsosknm13_kna = #{comsosknm13Kna,jdbcType=VARCHAR},
+      comsosknm23_kna = #{comsosknm23Kna,jdbcType=VARCHAR},
+      comhyojijun3_num = #{comhyojijun3Num,jdbcType=INTEGER},
+      comsosk4_cod = #{comsosk4Cod,jdbcType=CHAR},
+      comsosknm14_knj = #{comsosknm14Knj,jdbcType=VARCHAR},
+      comsosknm24_knj = #{comsosknm24Knj,jdbcType=VARCHAR},
+      comsosknm14_kna = #{comsosknm14Kna,jdbcType=VARCHAR},
+      comsosknm24_kna = #{comsosknm24Kna,jdbcType=VARCHAR},
+      comhyojijun4_num = #{comhyojijun4Num,jdbcType=INTEGER},
+      comsosk5_cod = #{comsosk5Cod,jdbcType=CHAR},
+      comsosknm15_knj = #{comsosknm15Knj,jdbcType=VARCHAR},
+      comsosknm25_knj = #{comsosknm25Knj,jdbcType=VARCHAR},
+      comsosknm15_kna = #{comsosknm15Kna,jdbcType=VARCHAR},
+      comsosknm25_kna = #{comsosknm25Kna,jdbcType=VARCHAR},
+      comhyojijun5_num = #{comhyojijun5Num,jdbcType=INTEGER},
+      comsosk6_cod = #{comsosk6Cod,jdbcType=CHAR},
+      comsosknm16_knj = #{comsosknm16Knj,jdbcType=VARCHAR},
+      comsosknm26_knj = #{comsosknm26Knj,jdbcType=VARCHAR},
+      comsosknm16_kna = #{comsosknm16Kna,jdbcType=VARCHAR},
+      comsosknm26_kna = #{comsosknm26Kna,jdbcType=VARCHAR},
+      comhyojijun6_num = #{comhyojijun6Num,jdbcType=INTEGER},
+      comsosk7_cod = #{comsosk7Cod,jdbcType=CHAR},
+      comsosknm17_knj = #{comsosknm17Knj,jdbcType=VARCHAR},
+      comsosknm27_knj = #{comsosknm27Knj,jdbcType=VARCHAR},
+      comsosknm17_kna = #{comsosknm17Kna,jdbcType=VARCHAR},
+      comsosknm27_kna = #{comsosknm27Kna,jdbcType=VARCHAR},
+      comhyojijun7_num = #{comhyojijun7Num,jdbcType=INTEGER},
+      comsosk8_cod = #{comsosk8Cod,jdbcType=CHAR},
+      comsosknm18_knj = #{comsosknm18Knj,jdbcType=VARCHAR},
+      comsosknm28_knj = #{comsosknm28Knj,jdbcType=VARCHAR},
+      comsosknm18_kna = #{comsosknm18Kna,jdbcType=VARCHAR},
+      comsosknm28_kna = #{comsosknm28Kna,jdbcType=VARCHAR},
+      comhyojijun8_num = #{comhyojijun8Num,jdbcType=INTEGER},
+      comsosk9_cod = #{comsosk9Cod,jdbcType=CHAR},
+      comsosknm19_knj = #{comsosknm19Knj,jdbcType=VARCHAR},
+      comsosknm29_knj = #{comsosknm29Knj,jdbcType=VARCHAR},
+      comsosknm19_kna = #{comsosknm19Kna,jdbcType=VARCHAR},
+      comsosknm29_kna = #{comsosknm29Kna,jdbcType=VARCHAR},
+      comhyojijun9_num = #{comhyojijun9Num,jdbcType=INTEGER},
+      comsosk10_cod = #{comsosk10Cod,jdbcType=CHAR},
+      comsosknm110_knj = #{comsosknm110Knj,jdbcType=VARCHAR},
+      comsosknm210_knj = #{comsosknm210Knj,jdbcType=VARCHAR},
+      comsosknm110_kna = #{comsosknm110Kna,jdbcType=VARCHAR},
+      comsosknm210_kna = #{comsosknm210Kna,jdbcType=VARCHAR},
+      comhyojijun10_num = #{comhyojijun10Num,jdbcType=INTEGER},
+      comyobi_kbn = #{comyobiKbn,jdbcType=CHAR},
+      comtekiyoend_ymd = #{comtekiyoendYmd,jdbcType=DATE},
+      comcrt_ymd = #{comcrtYmd,jdbcType=DATE},
+      comcrtshain_cod = #{comcrtshainCod,jdbcType=CHAR},
+      comupd_ymd = #{comupdYmd,jdbcType=DATE},
+      comupdshain_cod = #{comupdshainCod,jdbcType=CHAR}
+    where comgyomu_kbn = #{comgyomuKbn,jdbcType=SMALLINT}
+      and comten_cod = #{comtenCod,jdbcType=CHAR}
+      and comsosknm11_knj = #{comsosknm11Knj,jdbcType=VARCHAR}
+      and comtekiyostr_ymd = #{comtekiyostrYmd,jdbcType=DATE}
+  </update>
+
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.wetech.ryutsumodel.model.entity.TmmsoshikiExample">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tmmsoshiki
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    </select>
+</mapper>

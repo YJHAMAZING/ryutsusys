@@ -1,0 +1,790 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wetech.ryutsumodel.model.mapper.TmmjininMapper">
+  <resultMap id="BaseResultMap" type="com.wetech.ryutsumodel.model.entity.Tmmjinin">
+    <!--@mbg.generated-->
+    <!--@Table tmmjinin-->
+    <id column="comjugyoin_cod" jdbcType="CHAR" property="comjugyoinCod" />
+    <result column="comjuko_kbn" jdbcType="SMALLINT" property="comjukoKbn" />
+    <result column="comsozten_cod" jdbcType="CHAR" property="comsoztenCod" />
+    <result column="comshimeisei_knj" jdbcType="VARCHAR" property="comshimeiseiKnj" />
+    <result column="comshimeimei_knj" jdbcType="VARCHAR" property="comshimeimeiKnj" />
+    <result column="comshimeisei_kna" jdbcType="VARCHAR" property="comshimeiseiKna" />
+    <result column="comshimeimei_kna" jdbcType="VARCHAR" property="comshimeimeiKna" />
+    <result column="comshimeisei_eng" jdbcType="VARCHAR" property="comshimeiseiEng" />
+    <result column="comshimeimdl_eng" jdbcType="VARCHAR" property="comshimeimdlEng" />
+    <result column="comshimeimei_eng" jdbcType="VARCHAR" property="comshimeimeiEng" />
+    <result column="comyakushoku_kbn" jdbcType="SMALLINT" property="comyakushokuKbn" />
+    <result column="comshokuno_kbn" jdbcType="CHAR" property="comshokunoKbn" />
+    <result column="comjujigyomu1_kbn" jdbcType="CHAR" property="comjujigyomu1Kbn" />
+    <result column="comjujigyomu2_kbn" jdbcType="CHAR" property="comjujigyomu2Kbn" />
+    <result column="comjujigyomu3_kbn" jdbcType="CHAR" property="comjujigyomu3Kbn" />
+    <result column="comjujigyomu4_kbn" jdbcType="CHAR" property="comjujigyomu4Kbn" />
+    <result column="comjujigyomu5_kbn" jdbcType="CHAR" property="comjujigyomu5Kbn" />
+    <result column="compassword_cod" jdbcType="VARCHAR" property="compasswordCod" />
+    <result column="comjtk_zip" jdbcType="VARCHAR" property="comjtkZip" />
+    <result column="comjtkken_jis" jdbcType="CHAR" property="comjtkkenJis" />
+    <result column="comjtkshiku_jis" jdbcType="CHAR" property="comjtkshikuJis" />
+    <result column="comjtkhojo_jis" jdbcType="CHAR" property="comjtkhojoJis" />
+    <result column="comjtkchome_jis" jdbcType="CHAR" property="comjtkchomeJis" />
+    <result column="comjtkadrban_num" jdbcType="INTEGER" property="comjtkadrbanNum" />
+    <result column="comjtkadrgo_num" jdbcType="INTEGER" property="comjtkadrgoNum" />
+    <result column="comjtkbldgnm_kna" jdbcType="VARCHAR" property="comjtkbldgnmKna" />
+    <result column="comjtkbldgnm_knj" jdbcType="VARCHAR" property="comjtkbldgnmKnj" />
+    <result column="comfurbnk_cod" jdbcType="CHAR" property="comfurbnkCod" />
+    <result column="comfurbnktnp_cod" jdbcType="CHAR" property="comfurbnktnpCod" />
+    <result column="comfurkozanm_kna" jdbcType="VARCHAR" property="comfurkozanmKna" />
+    <result column="comfurkozano_num" jdbcType="CHAR" property="comfurkozanoNum" />
+    <result column="comfuryknsbt_kbn" jdbcType="SMALLINT" property="comfuryknsbtKbn" />
+    <result column="comfurdsn_kbn" jdbcType="SMALLINT" property="comfurdsnKbn" />
+    <result column="comfurtesuryo_kbn" jdbcType="SMALLINT" property="comfurtesuryoKbn" />
+    <result column="comnaisen_tel" jdbcType="VARCHAR" property="comnaisenTel" />
+    <result column="comnaisen_fax" jdbcType="VARCHAR" property="comnaisenFax" />
+    <result column="comkenmuten_cod" jdbcType="CHAR" property="comkenmutenCod" />
+    <result column="comkenmuten2_cod" jdbcType="CHAR" property="comkenmuten2Cod" />
+    <result column="comkenmuten3_cod" jdbcType="CHAR" property="comkenmuten3Cod" />
+    <result column="comkenmuten4_cod" jdbcType="CHAR" property="comkenmuten4Cod" />
+    <result column="comkenmuten5_cod" jdbcType="CHAR" property="comkenmuten5Cod" />
+    <result column="comkenmuten6_cod" jdbcType="CHAR" property="comkenmuten6Cod" />
+    <result column="comkenmuten7_cod" jdbcType="CHAR" property="comkenmuten7Cod" />
+    <result column="comkenmuten8_cod" jdbcType="CHAR" property="comkenmuten8Cod" />
+    <result column="comkenmuten9_cod" jdbcType="CHAR" property="comkenmuten9Cod" />
+    <result column="comkenmuten10_cod" jdbcType="CHAR" property="comkenmuten10Cod" />
+    <result column="comgyosha_cod" jdbcType="CHAR" property="comgyoshaCod" />
+    <result column="comjugyoin_mal" jdbcType="VARCHAR" property="comjugyoinMal" />
+    <result column="comknsmoji_kna" jdbcType="VARCHAR" property="comknsmojiKna" />
+    <result column="comyobi_kbn" jdbcType="CHAR" property="comyobiKbn" />
+    <result column="comtekiyostr_ymd" jdbcType="DATE" property="comtekiyostrYmd" />
+    <result column="comtekiyoend_ymd" jdbcType="DATE" property="comtekiyoendYmd" />
+    <result column="comcrt_ymd" jdbcType="DATE" property="comcrtYmd" />
+    <result column="comcrtshain_cod" jdbcType="CHAR" property="comcrtshainCod" />
+    <result column="comupd_ymd" jdbcType="DATE" property="comupdYmd" />
+    <result column="comupdshain_cod" jdbcType="CHAR" property="comupdshainCod" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+      This element is automatically generated by MyBatis Generator, do not modify.
+      This element was generated on Fri Dec 16 22:37:36 JST 2022.
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+      WARNING - @mbg.generated
+      This element is automatically generated by MyBatis Generator, do not modify.
+      This element was generated on Fri Dec 16 22:37:36 JST 2022.
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    comjugyoin_cod, comjuko_kbn, comsozten_cod, comshimeisei_knj, comshimeimei_knj, comshimeisei_kna, 
+    comshimeimei_kna, comshimeisei_eng, comshimeimdl_eng, comshimeimei_eng, comyakushoku_kbn, 
+    comshokuno_kbn, comjujigyomu1_kbn, comjujigyomu2_kbn, comjujigyomu3_kbn, comjujigyomu4_kbn, 
+    comjujigyomu5_kbn, compassword_cod, comjtk_zip, comjtkken_jis, comjtkshiku_jis, comjtkhojo_jis, 
+    comjtkchome_jis, comjtkadrban_num, comjtkadrgo_num, comjtkbldgnm_kna, comjtkbldgnm_knj, 
+    comfurbnk_cod, comfurbnktnp_cod, comfurkozanm_kna, comfurkozano_num, comfuryknsbt_kbn, 
+    comfurdsn_kbn, comfurtesuryo_kbn, comnaisen_tel, comnaisen_fax, comkenmuten_cod, 
+    comkenmuten2_cod, comkenmuten3_cod, comkenmuten4_cod, comkenmuten5_cod, comkenmuten6_cod, 
+    comkenmuten7_cod, comkenmuten8_cod, comkenmuten9_cod, comkenmuten10_cod, comgyosha_cod, 
+    comjugyoin_mal, comknsmoji_kna, comyobi_kbn, comtekiyostr_ymd, comtekiyoend_ymd, 
+    comcrt_ymd, comcrtshain_cod, comupd_ymd, comupdshain_cod
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from tmmjinin
+    where comjugyoin_cod = #{comjugyoinCod,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    <!--@mbg.generated-->
+    delete from tmmjinin
+    where comjugyoin_cod = #{comjugyoinCod,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.wetech.ryutsumodel.model.entity.Tmmjinin">
+    <!--@mbg.generated-->
+    insert into tmmjinin (comjugyoin_cod, comjuko_kbn, comsozten_cod, 
+      comshimeisei_knj, comshimeimei_knj, comshimeisei_kna, 
+      comshimeimei_kna, comshimeisei_eng, comshimeimdl_eng, 
+      comshimeimei_eng, comyakushoku_kbn, comshokuno_kbn, 
+      comjujigyomu1_kbn, comjujigyomu2_kbn, comjujigyomu3_kbn, 
+      comjujigyomu4_kbn, comjujigyomu5_kbn, compassword_cod, 
+      comjtk_zip, comjtkken_jis, comjtkshiku_jis, 
+      comjtkhojo_jis, comjtkchome_jis, comjtkadrban_num, 
+      comjtkadrgo_num, comjtkbldgnm_kna, comjtkbldgnm_knj, 
+      comfurbnk_cod, comfurbnktnp_cod, comfurkozanm_kna, 
+      comfurkozano_num, comfuryknsbt_kbn, comfurdsn_kbn, 
+      comfurtesuryo_kbn, comnaisen_tel, comnaisen_fax, 
+      comkenmuten_cod, comkenmuten2_cod, comkenmuten3_cod, 
+      comkenmuten4_cod, comkenmuten5_cod, comkenmuten6_cod, 
+      comkenmuten7_cod, comkenmuten8_cod, comkenmuten9_cod, 
+      comkenmuten10_cod, comgyosha_cod, comjugyoin_mal, 
+      comknsmoji_kna, comyobi_kbn, comtekiyostr_ymd, 
+      comtekiyoend_ymd, comcrt_ymd, comcrtshain_cod, 
+      comupd_ymd, comupdshain_cod)
+    values (#{comjugyoinCod,jdbcType=CHAR}, #{comjukoKbn,jdbcType=SMALLINT}, #{comsoztenCod,jdbcType=CHAR}, 
+      #{comshimeiseiKnj,jdbcType=VARCHAR}, #{comshimeimeiKnj,jdbcType=VARCHAR}, #{comshimeiseiKna,jdbcType=VARCHAR}, 
+      #{comshimeimeiKna,jdbcType=VARCHAR}, #{comshimeiseiEng,jdbcType=VARCHAR}, #{comshimeimdlEng,jdbcType=VARCHAR}, 
+      #{comshimeimeiEng,jdbcType=VARCHAR}, #{comyakushokuKbn,jdbcType=SMALLINT}, #{comshokunoKbn,jdbcType=CHAR}, 
+      #{comjujigyomu1Kbn,jdbcType=CHAR}, #{comjujigyomu2Kbn,jdbcType=CHAR}, #{comjujigyomu3Kbn,jdbcType=CHAR}, 
+      #{comjujigyomu4Kbn,jdbcType=CHAR}, #{comjujigyomu5Kbn,jdbcType=CHAR}, #{compasswordCod,jdbcType=VARCHAR}, 
+      #{comjtkZip,jdbcType=VARCHAR}, #{comjtkkenJis,jdbcType=CHAR}, #{comjtkshikuJis,jdbcType=CHAR}, 
+      #{comjtkhojoJis,jdbcType=CHAR}, #{comjtkchomeJis,jdbcType=CHAR}, #{comjtkadrbanNum,jdbcType=INTEGER}, 
+      #{comjtkadrgoNum,jdbcType=INTEGER}, #{comjtkbldgnmKna,jdbcType=VARCHAR}, #{comjtkbldgnmKnj,jdbcType=VARCHAR}, 
+      #{comfurbnkCod,jdbcType=CHAR}, #{comfurbnktnpCod,jdbcType=CHAR}, #{comfurkozanmKna,jdbcType=VARCHAR}, 
+      #{comfurkozanoNum,jdbcType=CHAR}, #{comfuryknsbtKbn,jdbcType=SMALLINT}, #{comfurdsnKbn,jdbcType=SMALLINT}, 
+      #{comfurtesuryoKbn,jdbcType=SMALLINT}, #{comnaisenTel,jdbcType=VARCHAR}, #{comnaisenFax,jdbcType=VARCHAR}, 
+      #{comkenmutenCod,jdbcType=CHAR}, #{comkenmuten2Cod,jdbcType=CHAR}, #{comkenmuten3Cod,jdbcType=CHAR}, 
+      #{comkenmuten4Cod,jdbcType=CHAR}, #{comkenmuten5Cod,jdbcType=CHAR}, #{comkenmuten6Cod,jdbcType=CHAR}, 
+      #{comkenmuten7Cod,jdbcType=CHAR}, #{comkenmuten8Cod,jdbcType=CHAR}, #{comkenmuten9Cod,jdbcType=CHAR}, 
+      #{comkenmuten10Cod,jdbcType=CHAR}, #{comgyoshaCod,jdbcType=CHAR}, #{comjugyoinMal,jdbcType=VARCHAR}, 
+      #{comknsmojiKna,jdbcType=VARCHAR}, #{comyobiKbn,jdbcType=CHAR}, #{comtekiyostrYmd,jdbcType=DATE}, 
+      #{comtekiyoendYmd,jdbcType=DATE}, #{comcrtYmd,jdbcType=DATE}, #{comcrtshainCod,jdbcType=CHAR}, 
+      #{comupdYmd,jdbcType=DATE}, #{comupdshainCod,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wetech.ryutsumodel.model.entity.Tmmjinin">
+    <!--@mbg.generated-->
+    insert into tmmjinin
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="comjugyoinCod != null">
+        comjugyoin_cod,
+      </if>
+      <if test="comjukoKbn != null">
+        comjuko_kbn,
+      </if>
+      <if test="comsoztenCod != null">
+        comsozten_cod,
+      </if>
+      <if test="comshimeiseiKnj != null">
+        comshimeisei_knj,
+      </if>
+      <if test="comshimeimeiKnj != null">
+        comshimeimei_knj,
+      </if>
+      <if test="comshimeiseiKna != null">
+        comshimeisei_kna,
+      </if>
+      <if test="comshimeimeiKna != null">
+        comshimeimei_kna,
+      </if>
+      <if test="comshimeiseiEng != null">
+        comshimeisei_eng,
+      </if>
+      <if test="comshimeimdlEng != null">
+        comshimeimdl_eng,
+      </if>
+      <if test="comshimeimeiEng != null">
+        comshimeimei_eng,
+      </if>
+      <if test="comyakushokuKbn != null">
+        comyakushoku_kbn,
+      </if>
+      <if test="comshokunoKbn != null">
+        comshokuno_kbn,
+      </if>
+      <if test="comjujigyomu1Kbn != null">
+        comjujigyomu1_kbn,
+      </if>
+      <if test="comjujigyomu2Kbn != null">
+        comjujigyomu2_kbn,
+      </if>
+      <if test="comjujigyomu3Kbn != null">
+        comjujigyomu3_kbn,
+      </if>
+      <if test="comjujigyomu4Kbn != null">
+        comjujigyomu4_kbn,
+      </if>
+      <if test="comjujigyomu5Kbn != null">
+        comjujigyomu5_kbn,
+      </if>
+      <if test="compasswordCod != null">
+        compassword_cod,
+      </if>
+      <if test="comjtkZip != null">
+        comjtk_zip,
+      </if>
+      <if test="comjtkkenJis != null">
+        comjtkken_jis,
+      </if>
+      <if test="comjtkshikuJis != null">
+        comjtkshiku_jis,
+      </if>
+      <if test="comjtkhojoJis != null">
+        comjtkhojo_jis,
+      </if>
+      <if test="comjtkchomeJis != null">
+        comjtkchome_jis,
+      </if>
+      <if test="comjtkadrbanNum != null">
+        comjtkadrban_num,
+      </if>
+      <if test="comjtkadrgoNum != null">
+        comjtkadrgo_num,
+      </if>
+      <if test="comjtkbldgnmKna != null">
+        comjtkbldgnm_kna,
+      </if>
+      <if test="comjtkbldgnmKnj != null">
+        comjtkbldgnm_knj,
+      </if>
+      <if test="comfurbnkCod != null">
+        comfurbnk_cod,
+      </if>
+      <if test="comfurbnktnpCod != null">
+        comfurbnktnp_cod,
+      </if>
+      <if test="comfurkozanmKna != null">
+        comfurkozanm_kna,
+      </if>
+      <if test="comfurkozanoNum != null">
+        comfurkozano_num,
+      </if>
+      <if test="comfuryknsbtKbn != null">
+        comfuryknsbt_kbn,
+      </if>
+      <if test="comfurdsnKbn != null">
+        comfurdsn_kbn,
+      </if>
+      <if test="comfurtesuryoKbn != null">
+        comfurtesuryo_kbn,
+      </if>
+      <if test="comnaisenTel != null">
+        comnaisen_tel,
+      </if>
+      <if test="comnaisenFax != null">
+        comnaisen_fax,
+      </if>
+      <if test="comkenmutenCod != null">
+        comkenmuten_cod,
+      </if>
+      <if test="comkenmuten2Cod != null">
+        comkenmuten2_cod,
+      </if>
+      <if test="comkenmuten3Cod != null">
+        comkenmuten3_cod,
+      </if>
+      <if test="comkenmuten4Cod != null">
+        comkenmuten4_cod,
+      </if>
+      <if test="comkenmuten5Cod != null">
+        comkenmuten5_cod,
+      </if>
+      <if test="comkenmuten6Cod != null">
+        comkenmuten6_cod,
+      </if>
+      <if test="comkenmuten7Cod != null">
+        comkenmuten7_cod,
+      </if>
+      <if test="comkenmuten8Cod != null">
+        comkenmuten8_cod,
+      </if>
+      <if test="comkenmuten9Cod != null">
+        comkenmuten9_cod,
+      </if>
+      <if test="comkenmuten10Cod != null">
+        comkenmuten10_cod,
+      </if>
+      <if test="comgyoshaCod != null">
+        comgyosha_cod,
+      </if>
+      <if test="comjugyoinMal != null">
+        comjugyoin_mal,
+      </if>
+      <if test="comknsmojiKna != null">
+        comknsmoji_kna,
+      </if>
+      <if test="comyobiKbn != null">
+        comyobi_kbn,
+      </if>
+      <if test="comtekiyostrYmd != null">
+        comtekiyostr_ymd,
+      </if>
+      <if test="comtekiyoendYmd != null">
+        comtekiyoend_ymd,
+      </if>
+      <if test="comcrtYmd != null">
+        comcrt_ymd,
+      </if>
+      <if test="comcrtshainCod != null">
+        comcrtshain_cod,
+      </if>
+      <if test="comupdYmd != null">
+        comupd_ymd,
+      </if>
+      <if test="comupdshainCod != null">
+        comupdshain_cod,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="comjugyoinCod != null">
+        #{comjugyoinCod,jdbcType=CHAR},
+      </if>
+      <if test="comjukoKbn != null">
+        #{comjukoKbn,jdbcType=SMALLINT},
+      </if>
+      <if test="comsoztenCod != null">
+        #{comsoztenCod,jdbcType=CHAR},
+      </if>
+      <if test="comshimeiseiKnj != null">
+        #{comshimeiseiKnj,jdbcType=VARCHAR},
+      </if>
+      <if test="comshimeimeiKnj != null">
+        #{comshimeimeiKnj,jdbcType=VARCHAR},
+      </if>
+      <if test="comshimeiseiKna != null">
+        #{comshimeiseiKna,jdbcType=VARCHAR},
+      </if>
+      <if test="comshimeimeiKna != null">
+        #{comshimeimeiKna,jdbcType=VARCHAR},
+      </if>
+      <if test="comshimeiseiEng != null">
+        #{comshimeiseiEng,jdbcType=VARCHAR},
+      </if>
+      <if test="comshimeimdlEng != null">
+        #{comshimeimdlEng,jdbcType=VARCHAR},
+      </if>
+      <if test="comshimeimeiEng != null">
+        #{comshimeimeiEng,jdbcType=VARCHAR},
+      </if>
+      <if test="comyakushokuKbn != null">
+        #{comyakushokuKbn,jdbcType=SMALLINT},
+      </if>
+      <if test="comshokunoKbn != null">
+        #{comshokunoKbn,jdbcType=CHAR},
+      </if>
+      <if test="comjujigyomu1Kbn != null">
+        #{comjujigyomu1Kbn,jdbcType=CHAR},
+      </if>
+      <if test="comjujigyomu2Kbn != null">
+        #{comjujigyomu2Kbn,jdbcType=CHAR},
+      </if>
+      <if test="comjujigyomu3Kbn != null">
+        #{comjujigyomu3Kbn,jdbcType=CHAR},
+      </if>
+      <if test="comjujigyomu4Kbn != null">
+        #{comjujigyomu4Kbn,jdbcType=CHAR},
+      </if>
+      <if test="comjujigyomu5Kbn != null">
+        #{comjujigyomu5Kbn,jdbcType=CHAR},
+      </if>
+      <if test="compasswordCod != null">
+        #{compasswordCod,jdbcType=VARCHAR},
+      </if>
+      <if test="comjtkZip != null">
+        #{comjtkZip,jdbcType=VARCHAR},
+      </if>
+      <if test="comjtkkenJis != null">
+        #{comjtkkenJis,jdbcType=CHAR},
+      </if>
+      <if test="comjtkshikuJis != null">
+        #{comjtkshikuJis,jdbcType=CHAR},
+      </if>
+      <if test="comjtkhojoJis != null">
+        #{comjtkhojoJis,jdbcType=CHAR},
+      </if>
+      <if test="comjtkchomeJis != null">
+        #{comjtkchomeJis,jdbcType=CHAR},
+      </if>
+      <if test="comjtkadrbanNum != null">
+        #{comjtkadrbanNum,jdbcType=INTEGER},
+      </if>
+      <if test="comjtkadrgoNum != null">
+        #{comjtkadrgoNum,jdbcType=INTEGER},
+      </if>
+      <if test="comjtkbldgnmKna != null">
+        #{comjtkbldgnmKna,jdbcType=VARCHAR},
+      </if>
+      <if test="comjtkbldgnmKnj != null">
+        #{comjtkbldgnmKnj,jdbcType=VARCHAR},
+      </if>
+      <if test="comfurbnkCod != null">
+        #{comfurbnkCod,jdbcType=CHAR},
+      </if>
+      <if test="comfurbnktnpCod != null">
+        #{comfurbnktnpCod,jdbcType=CHAR},
+      </if>
+      <if test="comfurkozanmKna != null">
+        #{comfurkozanmKna,jdbcType=VARCHAR},
+      </if>
+      <if test="comfurkozanoNum != null">
+        #{comfurkozanoNum,jdbcType=CHAR},
+      </if>
+      <if test="comfuryknsbtKbn != null">
+        #{comfuryknsbtKbn,jdbcType=SMALLINT},
+      </if>
+      <if test="comfurdsnKbn != null">
+        #{comfurdsnKbn,jdbcType=SMALLINT},
+      </if>
+      <if test="comfurtesuryoKbn != null">
+        #{comfurtesuryoKbn,jdbcType=SMALLINT},
+      </if>
+      <if test="comnaisenTel != null">
+        #{comnaisenTel,jdbcType=VARCHAR},
+      </if>
+      <if test="comnaisenFax != null">
+        #{comnaisenFax,jdbcType=VARCHAR},
+      </if>
+      <if test="comkenmutenCod != null">
+        #{comkenmutenCod,jdbcType=CHAR},
+      </if>
+      <if test="comkenmuten2Cod != null">
+        #{comkenmuten2Cod,jdbcType=CHAR},
+      </if>
+      <if test="comkenmuten3Cod != null">
+        #{comkenmuten3Cod,jdbcType=CHAR},
+      </if>
+      <if test="comkenmuten4Cod != null">
+        #{comkenmuten4Cod,jdbcType=CHAR},
+      </if>
+      <if test="comkenmuten5Cod != null">
+        #{comkenmuten5Cod,jdbcType=CHAR},
+      </if>
+      <if test="comkenmuten6Cod != null">
+        #{comkenmuten6Cod,jdbcType=CHAR},
+      </if>
+      <if test="comkenmuten7Cod != null">
+        #{comkenmuten7Cod,jdbcType=CHAR},
+      </if>
+      <if test="comkenmuten8Cod != null">
+        #{comkenmuten8Cod,jdbcType=CHAR},
+      </if>
+      <if test="comkenmuten9Cod != null">
+        #{comkenmuten9Cod,jdbcType=CHAR},
+      </if>
+      <if test="comkenmuten10Cod != null">
+        #{comkenmuten10Cod,jdbcType=CHAR},
+      </if>
+      <if test="comgyoshaCod != null">
+        #{comgyoshaCod,jdbcType=CHAR},
+      </if>
+      <if test="comjugyoinMal != null">
+        #{comjugyoinMal,jdbcType=VARCHAR},
+      </if>
+      <if test="comknsmojiKna != null">
+        #{comknsmojiKna,jdbcType=VARCHAR},
+      </if>
+      <if test="comyobiKbn != null">
+        #{comyobiKbn,jdbcType=CHAR},
+      </if>
+      <if test="comtekiyostrYmd != null">
+        #{comtekiyostrYmd,jdbcType=DATE},
+      </if>
+      <if test="comtekiyoendYmd != null">
+        #{comtekiyoendYmd,jdbcType=DATE},
+      </if>
+      <if test="comcrtYmd != null">
+        #{comcrtYmd,jdbcType=DATE},
+      </if>
+      <if test="comcrtshainCod != null">
+        #{comcrtshainCod,jdbcType=CHAR},
+      </if>
+      <if test="comupdYmd != null">
+        #{comupdYmd,jdbcType=DATE},
+      </if>
+      <if test="comupdshainCod != null">
+        #{comupdshainCod,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wetech.ryutsumodel.model.entity.Tmmjinin">
+    <!--@mbg.generated-->
+    update tmmjinin
+    <set>
+      <if test="comjukoKbn != null">
+        comjuko_kbn = #{comjukoKbn,jdbcType=SMALLINT},
+      </if>
+      <if test="comsoztenCod != null">
+        comsozten_cod = #{comsoztenCod,jdbcType=CHAR},
+      </if>
+      <if test="comshimeiseiKnj != null">
+        comshimeisei_knj = #{comshimeiseiKnj,jdbcType=VARCHAR},
+      </if>
+      <if test="comshimeimeiKnj != null">
+        comshimeimei_knj = #{comshimeimeiKnj,jdbcType=VARCHAR},
+      </if>
+      <if test="comshimeiseiKna != null">
+        comshimeisei_kna = #{comshimeiseiKna,jdbcType=VARCHAR},
+      </if>
+      <if test="comshimeimeiKna != null">
+        comshimeimei_kna = #{comshimeimeiKna,jdbcType=VARCHAR},
+      </if>
+      <if test="comshimeiseiEng != null">
+        comshimeisei_eng = #{comshimeiseiEng,jdbcType=VARCHAR},
+      </if>
+      <if test="comshimeimdlEng != null">
+        comshimeimdl_eng = #{comshimeimdlEng,jdbcType=VARCHAR},
+      </if>
+      <if test="comshimeimeiEng != null">
+        comshimeimei_eng = #{comshimeimeiEng,jdbcType=VARCHAR},
+      </if>
+      <if test="comyakushokuKbn != null">
+        comyakushoku_kbn = #{comyakushokuKbn,jdbcType=SMALLINT},
+      </if>
+      <if test="comshokunoKbn != null">
+        comshokuno_kbn = #{comshokunoKbn,jdbcType=CHAR},
+      </if>
+      <if test="comjujigyomu1Kbn != null">
+        comjujigyomu1_kbn = #{comjujigyomu1Kbn,jdbcType=CHAR},
+      </if>
+      <if test="comjujigyomu2Kbn != null">
+        comjujigyomu2_kbn = #{comjujigyomu2Kbn,jdbcType=CHAR},
+      </if>
+      <if test="comjujigyomu3Kbn != null">
+        comjujigyomu3_kbn = #{comjujigyomu3Kbn,jdbcType=CHAR},
+      </if>
+      <if test="comjujigyomu4Kbn != null">
+        comjujigyomu4_kbn = #{comjujigyomu4Kbn,jdbcType=CHAR},
+      </if>
+      <if test="comjujigyomu5Kbn != null">
+        comjujigyomu5_kbn = #{comjujigyomu5Kbn,jdbcType=CHAR},
+      </if>
+      <if test="compasswordCod != null">
+        compassword_cod = #{compasswordCod,jdbcType=VARCHAR},
+      </if>
+      <if test="comjtkZip != null">
+        comjtk_zip = #{comjtkZip,jdbcType=VARCHAR},
+      </if>
+      <if test="comjtkkenJis != null">
+        comjtkken_jis = #{comjtkkenJis,jdbcType=CHAR},
+      </if>
+      <if test="comjtkshikuJis != null">
+        comjtkshiku_jis = #{comjtkshikuJis,jdbcType=CHAR},
+      </if>
+      <if test="comjtkhojoJis != null">
+        comjtkhojo_jis = #{comjtkhojoJis,jdbcType=CHAR},
+      </if>
+      <if test="comjtkchomeJis != null">
+        comjtkchome_jis = #{comjtkchomeJis,jdbcType=CHAR},
+      </if>
+      <if test="comjtkadrbanNum != null">
+        comjtkadrban_num = #{comjtkadrbanNum,jdbcType=INTEGER},
+      </if>
+      <if test="comjtkadrgoNum != null">
+        comjtkadrgo_num = #{comjtkadrgoNum,jdbcType=INTEGER},
+      </if>
+      <if test="comjtkbldgnmKna != null">
+        comjtkbldgnm_kna = #{comjtkbldgnmKna,jdbcType=VARCHAR},
+      </if>
+      <if test="comjtkbldgnmKnj != null">
+        comjtkbldgnm_knj = #{comjtkbldgnmKnj,jdbcType=VARCHAR},
+      </if>
+      <if test="comfurbnkCod != null">
+        comfurbnk_cod = #{comfurbnkCod,jdbcType=CHAR},
+      </if>
+      <if test="comfurbnktnpCod != null">
+        comfurbnktnp_cod = #{comfurbnktnpCod,jdbcType=CHAR},
+      </if>
+      <if test="comfurkozanmKna != null">
+        comfurkozanm_kna = #{comfurkozanmKna,jdbcType=VARCHAR},
+      </if>
+      <if test="comfurkozanoNum != null">
+        comfurkozano_num = #{comfurkozanoNum,jdbcType=CHAR},
+      </if>
+      <if test="comfuryknsbtKbn != null">
+        comfuryknsbt_kbn = #{comfuryknsbtKbn,jdbcType=SMALLINT},
+      </if>
+      <if test="comfurdsnKbn != null">
+        comfurdsn_kbn = #{comfurdsnKbn,jdbcType=SMALLINT},
+      </if>
+      <if test="comfurtesuryoKbn != null">
+        comfurtesuryo_kbn = #{comfurtesuryoKbn,jdbcType=SMALLINT},
+      </if>
+      <if test="comnaisenTel != null">
+        comnaisen_tel = #{comnaisenTel,jdbcType=VARCHAR},
+      </if>
+      <if test="comnaisenFax != null">
+        comnaisen_fax = #{comnaisenFax,jdbcType=VARCHAR},
+      </if>
+      <if test="comkenmutenCod != null">
+        comkenmuten_cod = #{comkenmutenCod,jdbcType=CHAR},
+      </if>
+      <if test="comkenmuten2Cod != null">
+        comkenmuten2_cod = #{comkenmuten2Cod,jdbcType=CHAR},
+      </if>
+      <if test="comkenmuten3Cod != null">
+        comkenmuten3_cod = #{comkenmuten3Cod,jdbcType=CHAR},
+      </if>
+      <if test="comkenmuten4Cod != null">
+        comkenmuten4_cod = #{comkenmuten4Cod,jdbcType=CHAR},
+      </if>
+      <if test="comkenmuten5Cod != null">
+        comkenmuten5_cod = #{comkenmuten5Cod,jdbcType=CHAR},
+      </if>
+      <if test="comkenmuten6Cod != null">
+        comkenmuten6_cod = #{comkenmuten6Cod,jdbcType=CHAR},
+      </if>
+      <if test="comkenmuten7Cod != null">
+        comkenmuten7_cod = #{comkenmuten7Cod,jdbcType=CHAR},
+      </if>
+      <if test="comkenmuten8Cod != null">
+        comkenmuten8_cod = #{comkenmuten8Cod,jdbcType=CHAR},
+      </if>
+      <if test="comkenmuten9Cod != null">
+        comkenmuten9_cod = #{comkenmuten9Cod,jdbcType=CHAR},
+      </if>
+      <if test="comkenmuten10Cod != null">
+        comkenmuten10_cod = #{comkenmuten10Cod,jdbcType=CHAR},
+      </if>
+      <if test="comgyoshaCod != null">
+        comgyosha_cod = #{comgyoshaCod,jdbcType=CHAR},
+      </if>
+      <if test="comjugyoinMal != null">
+        comjugyoin_mal = #{comjugyoinMal,jdbcType=VARCHAR},
+      </if>
+      <if test="comknsmojiKna != null">
+        comknsmoji_kna = #{comknsmojiKna,jdbcType=VARCHAR},
+      </if>
+      <if test="comyobiKbn != null">
+        comyobi_kbn = #{comyobiKbn,jdbcType=CHAR},
+      </if>
+      <if test="comtekiyostrYmd != null">
+        comtekiyostr_ymd = #{comtekiyostrYmd,jdbcType=DATE},
+      </if>
+      <if test="comtekiyoendYmd != null">
+        comtekiyoend_ymd = #{comtekiyoendYmd,jdbcType=DATE},
+      </if>
+      <if test="comcrtYmd != null">
+        comcrt_ymd = #{comcrtYmd,jdbcType=DATE},
+      </if>
+      <if test="comcrtshainCod != null">
+        comcrtshain_cod = #{comcrtshainCod,jdbcType=CHAR},
+      </if>
+      <if test="comupdYmd != null">
+        comupd_ymd = #{comupdYmd,jdbcType=DATE},
+      </if>
+      <if test="comupdshainCod != null">
+        comupdshain_cod = #{comupdshainCod,jdbcType=CHAR},
+      </if>
+    </set>
+    where comjugyoin_cod = #{comjugyoinCod,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wetech.ryutsumodel.model.entity.Tmmjinin">
+    <!--@mbg.generated-->
+    update tmmjinin
+    set comjuko_kbn = #{comjukoKbn,jdbcType=SMALLINT},
+      comsozten_cod = #{comsoztenCod,jdbcType=CHAR},
+      comshimeisei_knj = #{comshimeiseiKnj,jdbcType=VARCHAR},
+      comshimeimei_knj = #{comshimeimeiKnj,jdbcType=VARCHAR},
+      comshimeisei_kna = #{comshimeiseiKna,jdbcType=VARCHAR},
+      comshimeimei_kna = #{comshimeimeiKna,jdbcType=VARCHAR},
+      comshimeisei_eng = #{comshimeiseiEng,jdbcType=VARCHAR},
+      comshimeimdl_eng = #{comshimeimdlEng,jdbcType=VARCHAR},
+      comshimeimei_eng = #{comshimeimeiEng,jdbcType=VARCHAR},
+      comyakushoku_kbn = #{comyakushokuKbn,jdbcType=SMALLINT},
+      comshokuno_kbn = #{comshokunoKbn,jdbcType=CHAR},
+      comjujigyomu1_kbn = #{comjujigyomu1Kbn,jdbcType=CHAR},
+      comjujigyomu2_kbn = #{comjujigyomu2Kbn,jdbcType=CHAR},
+      comjujigyomu3_kbn = #{comjujigyomu3Kbn,jdbcType=CHAR},
+      comjujigyomu4_kbn = #{comjujigyomu4Kbn,jdbcType=CHAR},
+      comjujigyomu5_kbn = #{comjujigyomu5Kbn,jdbcType=CHAR},
+      compassword_cod = #{compasswordCod,jdbcType=VARCHAR},
+      comjtk_zip = #{comjtkZip,jdbcType=VARCHAR},
+      comjtkken_jis = #{comjtkkenJis,jdbcType=CHAR},
+      comjtkshiku_jis = #{comjtkshikuJis,jdbcType=CHAR},
+      comjtkhojo_jis = #{comjtkhojoJis,jdbcType=CHAR},
+      comjtkchome_jis = #{comjtkchomeJis,jdbcType=CHAR},
+      comjtkadrban_num = #{comjtkadrbanNum,jdbcType=INTEGER},
+      comjtkadrgo_num = #{comjtkadrgoNum,jdbcType=INTEGER},
+      comjtkbldgnm_kna = #{comjtkbldgnmKna,jdbcType=VARCHAR},
+      comjtkbldgnm_knj = #{comjtkbldgnmKnj,jdbcType=VARCHAR},
+      comfurbnk_cod = #{comfurbnkCod,jdbcType=CHAR},
+      comfurbnktnp_cod = #{comfurbnktnpCod,jdbcType=CHAR},
+      comfurkozanm_kna = #{comfurkozanmKna,jdbcType=VARCHAR},
+      comfurkozano_num = #{comfurkozanoNum,jdbcType=CHAR},
+      comfuryknsbt_kbn = #{comfuryknsbtKbn,jdbcType=SMALLINT},
+      comfurdsn_kbn = #{comfurdsnKbn,jdbcType=SMALLINT},
+      comfurtesuryo_kbn = #{comfurtesuryoKbn,jdbcType=SMALLINT},
+      comnaisen_tel = #{comnaisenTel,jdbcType=VARCHAR},
+      comnaisen_fax = #{comnaisenFax,jdbcType=VARCHAR},
+      comkenmuten_cod = #{comkenmutenCod,jdbcType=CHAR},
+      comkenmuten2_cod = #{comkenmuten2Cod,jdbcType=CHAR},
+      comkenmuten3_cod = #{comkenmuten3Cod,jdbcType=CHAR},
+      comkenmuten4_cod = #{comkenmuten4Cod,jdbcType=CHAR},
+      comkenmuten5_cod = #{comkenmuten5Cod,jdbcType=CHAR},
+      comkenmuten6_cod = #{comkenmuten6Cod,jdbcType=CHAR},
+      comkenmuten7_cod = #{comkenmuten7Cod,jdbcType=CHAR},
+      comkenmuten8_cod = #{comkenmuten8Cod,jdbcType=CHAR},
+      comkenmuten9_cod = #{comkenmuten9Cod,jdbcType=CHAR},
+      comkenmuten10_cod = #{comkenmuten10Cod,jdbcType=CHAR},
+      comgyosha_cod = #{comgyoshaCod,jdbcType=CHAR},
+      comjugyoin_mal = #{comjugyoinMal,jdbcType=VARCHAR},
+      comknsmoji_kna = #{comknsmojiKna,jdbcType=VARCHAR},
+      comyobi_kbn = #{comyobiKbn,jdbcType=CHAR},
+      comtekiyostr_ymd = #{comtekiyostrYmd,jdbcType=DATE},
+      comtekiyoend_ymd = #{comtekiyoendYmd,jdbcType=DATE},
+      comcrt_ymd = #{comcrtYmd,jdbcType=DATE},
+      comcrtshain_cod = #{comcrtshainCod,jdbcType=CHAR},
+      comupd_ymd = #{comupdYmd,jdbcType=DATE},
+      comupdshain_cod = #{comupdshainCod,jdbcType=CHAR}
+    where comjugyoin_cod = #{comjugyoinCod,jdbcType=CHAR}
+  </update>
+
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.wetech.ryutsumodel.model.entity.TmmjininExample">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tmmjinin
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    </select>
+</mapper>

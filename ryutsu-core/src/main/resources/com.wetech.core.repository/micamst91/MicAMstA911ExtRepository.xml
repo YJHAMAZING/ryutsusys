@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wetech.core.repository.micamst91.MicAMstA911ExtRepository">
+
+    <select id="MicAMst91Sql001" parameterType="String" resultType="String">
+        SELECT
+            comsosk${soshikiKbn}_cod                        --組織コード
+        FROM
+            tmmsoshiki
+        WHERE
+            comten_cod = #{tenshoCode,jdbcType=CHAR}        --店所コード
+        AND
+            comgyomu_kbn = #{gyomuKbn,jdbcType=SMALLINT}    --業務区分
+        AND
+            current_date <![CDATA[<=]]> comtekiyoend_ymd
+        AND
+            current_date <![CDATA[>=]]> comtekiyostr_ymd
+        LIMIT
+            1
+        ;
+    </select>
+    
+    <select id="MicAMst91Sql002" parameterType="String" resultType="com.wetech.ryutsumodel.model.entity.Tmmsoshiki">
+        SELECT
+            *
+        FROM
+            tmmsoshiki
+        WHERE
+            comsosk${soshikiKbn}_cod = #{tenshoCode,jdbcType=CHAR}
+        AND
+            comgyomu_kbn = #{gyomuKbn,jdbcType=SMALLINT}
+        AND
+            current_date <![CDATA[<=]]> comtekiyoend_ymd
+        AND
+            current_date <![CDATA[>=]]> comtekiyostr_ymd
+        ;
+        
+    </select>
+
+
+</mapper>

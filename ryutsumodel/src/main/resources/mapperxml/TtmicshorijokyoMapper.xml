@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wetech.ryutsumodel.model.mapper.TtmicshorijokyoMapper">
+  <resultMap id="BaseResultMap" type="com.wetech.ryutsumodel.model.entity.Ttmicshorijokyo">
+    <!--@mbg.generated-->
+    <!--@Table ttmicshorijokyo-->
+    <id column="seq" jdbcType="INTEGER" property="seq" />
+    <result column="shori_id" jdbcType="VARCHAR" property="shoriId" />
+    <result column="shori_start_ymdhms" jdbcType="TIMESTAMP" property="shoriStartYmdhms" />
+    <result column="shori_end_ymdhms" jdbcType="TIMESTAMP" property="shoriEndYmdhms" />
+    <result column="upl_file_knj" jdbcType="VARCHAR" property="uplFileKnj" />
+    <result column="upl_file_path" jdbcType="VARCHAR" property="uplFilePath" />
+    <result column="dwl_file_knj" jdbcType="VARCHAR" property="dwlFileKnj" />
+    <result column="dwl_file_path" jdbcType="VARCHAR" property="dwlFilePath" />
+    <result column="shori_kbn" jdbcType="CHAR" property="shoriKbn" />
+    <result column="shori_status" jdbcType="CHAR" property="shoriStatus" />
+    <result column="jikko_shain_cod" jdbcType="CHAR" property="jikkoShainCod" />
+    <result column="msg" jdbcType="VARCHAR" property="msg" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+    <result column="crt-ymdhms" jdbcType="TIMESTAMP" property="crtYmdhms" />
+    <result column="crtshain_cod" jdbcType="CHAR" property="crtshainCod" />
+    <result column="crt_func_id" jdbcType="VARCHAR" property="crtFuncId" />
+    <result column="upd_ymdhms" jdbcType="TIMESTAMP" property="updYmdhms" />
+    <result column="updshain_cod" jdbcType="CHAR" property="updshainCod" />
+    <result column="upd_func_id" jdbcType="VARCHAR" property="updFuncId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    seq, shori_id, shori_start_ymdhms, shori_end_ymdhms, upl_file_knj, upl_file_path, 
+    dwl_file_knj, dwl_file_path, shori_kbn, shori_status, jikko_shain_cod, msg, version, 
+    crt-ymdhms, crtshain_cod, crt_func_id, upd_ymdhms, updshain_cod, upd_func_id
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from ttmicshorijokyo
+    where seq = #{seq,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from ttmicshorijokyo
+    where seq = #{seq,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.wetech.ryutsumodel.model.entity.Ttmicshorijokyo">
+    <!--@mbg.generated-->
+    insert into ttmicshorijokyo (seq, shori_id, shori_start_ymdhms, 
+      shori_end_ymdhms, upl_file_knj, upl_file_path, 
+      dwl_file_knj, dwl_file_path, shori_kbn, 
+      shori_status, jikko_shain_cod, msg, 
+      version, crt-ymdhms, crtshain_cod, 
+      crt_func_id, upd_ymdhms, updshain_cod, 
+      upd_func_id)
+    values (#{seq,jdbcType=INTEGER}, #{shoriId,jdbcType=VARCHAR}, #{shoriStartYmdhms,jdbcType=TIMESTAMP}, 
+      #{shoriEndYmdhms,jdbcType=TIMESTAMP}, #{uplFileKnj,jdbcType=VARCHAR}, #{uplFilePath,jdbcType=VARCHAR}, 
+      #{dwlFileKnj,jdbcType=VARCHAR}, #{dwlFilePath,jdbcType=VARCHAR}, #{shoriKbn,jdbcType=CHAR}, 
+      #{shoriStatus,jdbcType=CHAR}, #{jikkoShainCod,jdbcType=CHAR}, #{msg,jdbcType=VARCHAR}, 
+      #{version,jdbcType=INTEGER}, #{crtYmdhms,jdbcType=TIMESTAMP}, #{crtshainCod,jdbcType=CHAR}, 
+      #{crtFuncId,jdbcType=VARCHAR}, #{updYmdhms,jdbcType=TIMESTAMP}, #{updshainCod,jdbcType=CHAR}, 
+      #{updFuncId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wetech.ryutsumodel.model.entity.Ttmicshorijokyo">
+    <!--@mbg.generated-->
+    insert into ttmicshorijokyo
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="seq != null">
+        seq,
+      </if>
+      <if test="shoriId != null">
+        shori_id,
+      </if>
+      <if test="shoriStartYmdhms != null">
+        shori_start_ymdhms,
+      </if>
+      <if test="shoriEndYmdhms != null">
+        shori_end_ymdhms,
+      </if>
+      <if test="uplFileKnj != null">
+        upl_file_knj,
+      </if>
+      <if test="uplFilePath != null">
+        upl_file_path,
+      </if>
+      <if test="dwlFileKnj != null">
+        dwl_file_knj,
+      </if>
+      <if test="dwlFilePath != null">
+        dwl_file_path,
+      </if>
+      <if test="shoriKbn != null">
+        shori_kbn,
+      </if>
+      <if test="shoriStatus != null">
+        shori_status,
+      </if>
+      <if test="jikkoShainCod != null">
+        jikko_shain_cod,
+      </if>
+      <if test="msg != null">
+        msg,
+      </if>
+      <if test="version != null">
+        version,
+      </if>
+      <if test="crtYmdhms != null">
+        crt-ymdhms,
+      </if>
+      <if test="crtshainCod != null">
+        crtshain_cod,
+      </if>
+      <if test="crtFuncId != null">
+        crt_func_id,
+      </if>
+      <if test="updYmdhms != null">
+        upd_ymdhms,
+      </if>
+      <if test="updshainCod != null">
+        updshain_cod,
+      </if>
+      <if test="updFuncId != null">
+        upd_func_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="seq != null">
+        #{seq,jdbcType=INTEGER},
+      </if>
+      <if test="shoriId != null">
+        #{shoriId,jdbcType=VARCHAR},
+      </if>
+      <if test="shoriStartYmdhms != null">
+        #{shoriStartYmdhms,jdbcType=TIMESTAMP},
+      </if>
+      <if test="shoriEndYmdhms != null">
+        #{shoriEndYmdhms,jdbcType=TIMESTAMP},
+      </if>
+      <if test="uplFileKnj != null">
+        #{uplFileKnj,jdbcType=VARCHAR},
+      </if>
+      <if test="uplFilePath != null">
+        #{uplFilePath,jdbcType=VARCHAR},
+      </if>
+      <if test="dwlFileKnj != null">
+        #{dwlFileKnj,jdbcType=VARCHAR},
+      </if>
+      <if test="dwlFilePath != null">
+        #{dwlFilePath,jdbcType=VARCHAR},
+      </if>
+      <if test="shoriKbn != null">
+        #{shoriKbn,jdbcType=CHAR},
+      </if>
+      <if test="shoriStatus != null">
+        #{shoriStatus,jdbcType=CHAR},
+      </if>
+      <if test="jikkoShainCod != null">
+        #{jikkoShainCod,jdbcType=CHAR},
+      </if>
+      <if test="msg != null">
+        #{msg,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=INTEGER},
+      </if>
+      <if test="crtYmdhms != null">
+        #{crtYmdhms,jdbcType=TIMESTAMP},
+      </if>
+      <if test="crtshainCod != null">
+        #{crtshainCod,jdbcType=CHAR},
+      </if>
+      <if test="crtFuncId != null">
+        #{crtFuncId,jdbcType=VARCHAR},
+      </if>
+      <if test="updYmdhms != null">
+        #{updYmdhms,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updshainCod != null">
+        #{updshainCod,jdbcType=CHAR},
+      </if>
+      <if test="updFuncId != null">
+        #{updFuncId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.wetech.ryutsumodel.model.entity.Ttmicshorijokyo">
+    <!--@mbg.generated-->
+    update ttmicshorijokyo
+    <set>
+      <if test="shoriId != null">
+        shori_id = #{shoriId,jdbcType=VARCHAR},
+      </if>
+      <if test="shoriStartYmdhms != null">
+        shori_start_ymdhms = #{shoriStartYmdhms,jdbcType=TIMESTAMP},
+      </if>
+      <if test="shoriEndYmdhms != null">
+        shori_end_ymdhms = #{shoriEndYmdhms,jdbcType=TIMESTAMP},
+      </if>
+      <if test="uplFileKnj != null">
+        upl_file_knj = #{uplFileKnj,jdbcType=VARCHAR},
+      </if>
+      <if test="uplFilePath != null">
+        upl_file_path = #{uplFilePath,jdbcType=VARCHAR},
+      </if>
+      <if test="dwlFileKnj != null">
+        dwl_file_knj = #{dwlFileKnj,jdbcType=VARCHAR},
+      </if>
+      <if test="dwlFilePath != null">
+        dwl_file_path = #{dwlFilePath,jdbcType=VARCHAR},
+      </if>
+      <if test="shoriKbn != null">
+        shori_kbn = #{shoriKbn,jdbcType=CHAR},
+      </if>
+      <if test="shoriStatus != null">
+        shori_status = #{shoriStatus,jdbcType=CHAR},
+      </if>
+      <if test="jikkoShainCod != null">
+        jikko_shain_cod = #{jikkoShainCod,jdbcType=CHAR},
+      </if>
+      <if test="msg != null">
+        msg = #{msg,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null">
+        version = #{version,jdbcType=INTEGER},
+      </if>
+      <if test="crtYmdhms != null">
+        crt-ymdhms = #{crtYmdhms,jdbcType=TIMESTAMP},
+      </if>
+      <if test="crtshainCod != null">
+        crtshain_cod = #{crtshainCod,jdbcType=CHAR},
+      </if>
+      <if test="crtFuncId != null">
+        crt_func_id = #{crtFuncId,jdbcType=VARCHAR},
+      </if>
+      <if test="updYmdhms != null">
+        upd_ymdhms = #{updYmdhms,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updshainCod != null">
+        updshain_cod = #{updshainCod,jdbcType=CHAR},
+      </if>
+      <if test="updFuncId != null">
+        upd_func_id = #{updFuncId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where seq = #{seq,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.wetech.ryutsumodel.model.entity.Ttmicshorijokyo">
+    <!--@mbg.generated-->
+    update ttmicshorijokyo
+    set shori_id = #{shoriId,jdbcType=VARCHAR},
+      shori_start_ymdhms = #{shoriStartYmdhms,jdbcType=TIMESTAMP},
+      shori_end_ymdhms = #{shoriEndYmdhms,jdbcType=TIMESTAMP},
+      upl_file_knj = #{uplFileKnj,jdbcType=VARCHAR},
+      upl_file_path = #{uplFilePath,jdbcType=VARCHAR},
+      dwl_file_knj = #{dwlFileKnj,jdbcType=VARCHAR},
+      dwl_file_path = #{dwlFilePath,jdbcType=VARCHAR},
+      shori_kbn = #{shoriKbn,jdbcType=CHAR},
+      shori_status = #{shoriStatus,jdbcType=CHAR},
+      jikko_shain_cod = #{jikkoShainCod,jdbcType=CHAR},
+      msg = #{msg,jdbcType=VARCHAR},
+      version = #{version,jdbcType=INTEGER},
+      crt-ymdhms = #{crtYmdhms,jdbcType=TIMESTAMP},
+      crtshain_cod = #{crtshainCod,jdbcType=CHAR},
+      crt_func_id = #{crtFuncId,jdbcType=VARCHAR},
+      upd_ymdhms = #{updYmdhms,jdbcType=TIMESTAMP},
+      updshain_cod = #{updshainCod,jdbcType=CHAR},
+      upd_func_id = #{updFuncId,jdbcType=VARCHAR}
+    where seq = #{seq,jdbcType=INTEGER}
+  </update>
+</mapper>
