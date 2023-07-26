@@ -16,4 +16,8 @@ public class MessageUtil {
     public String getMessage(String messageId,String a,String b){
         return messageId + "/" + a + "/" + b;
     };
+
+    public String getMessage(String messageId, String[] args) {
+        return messageId+args.toString();
+    }
 }

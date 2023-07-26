@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wetech.core.repository.micacoma01.MicAComA017ExtRepository">
+
+    <select id="MicAComA017Sql001"  resultType="com.wetech.ryutsumodel.model.dto.TenshoInfoDto">
+    <![CDATA[
+        SELECT
+            a.comsosknm16_knj AS "companyName",        -- 組織マスタ.組織名称１６－漢字 
+            a.comsosknm15_knj AS "block",        -- 組織マスタ.組織名称１５－漢字
+            a.comsosknm14_knj AS "tokuteiShiten",        -- 組織マスタ.組織名称１４－漢字
+            a.comsosknm13_knj AS "shiten",        -- 組織マスタ.組織名称１３－漢字
+            a.comsosknm22_knj AS "kasho",        -- 組織マスタ.組織名称２２－漢字
+            a.comsosknm21_knj AS "depo",        -- 組織マスタ.組織名称２１－漢字
+            a.comten_cod AS "tenshoCode",             -- 組織マスタ.店所コード 
+            b.comgaisen_tel AS "gaisenTel"           -- 店所マスタ.外線電話番号
+        FROM
+            tmmsoshiki AS a                        -- 組織マスタ
+        INNER JOIN
+            tmmtensho AS b                    -- 店所マスタ
+        ON
+            a.comten_cod = b.comten_cod -- 組織マスタ.店所コード = 店所マスタ.店所コード
+        WHERE
+            a.comten_cod = #{tenshoCode, jdbcType=CHAR}
+        AND
+            comgyomu_kbn = #{gyomuKbn, jdbcType=SMALLINT}
+        AND
+            current_date >= a.comtekiyostr_ymd  -- 現在年月日 >= 組織マスタ.適用開始年月日
+        AND
+            current_date <= a.comtekiyoend_ymd  -- 現在年月日 <= 組織マスタ.適用終了年月日
+        AND
+            current_date >= b.comtekiyostr_ymd   -- 現在年月日 >= 店所マスタ.適用開始年月日
+        AND
+            current_date <= b.comtekiyoend_ymd   -- 現在年月日 <= 店所マスタ.適用終了年月日
+        LIMIT
+            1
+        ;
+        ]]>
+    </select>
+</mapper>
