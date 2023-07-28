@@ -10,6 +10,7 @@
 */
 package com.wetech.core.repository.micacoma01;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -24,7 +25,7 @@ import com.wetech.ryutsumodel.model.dto.TenshoInfoDto;
 * @version 1.1  2022/09/14
 * @author  富士通）末永 詩歩
 */
-@Repository
+@Mapper
 public interface MicAComA017ExtRepository {
     TenshoInfoDto MicAComA017Sql001(
             @Param("tenshoCode") String tenshoCode,

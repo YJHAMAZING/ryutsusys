@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wetech.core.repository.micacoma01.MicAComa014ExtRepository">
+  <resultMap id="TenshoSearchResultMap" type="com.wetech.ryutsumodel.model.entity.Tmtmsoshiki">
+    <id column="comgyomu_kbn" jdbcType="SMALLINT" property="comgyomu_kbn" />
+    <id column="comten_cod" jdbcType="CHAR" property="comten_cod" />
+    <id column="comtekiyostr_ymd" jdbcType="DATE" property="comtekiyostr_ymd" />
+    <result column="comsosk2_cod" jdbcType="CHAR" property="comsosk2_cod" />
+    <result column="comsosknm21_knj" jdbcType="VARCHAR" property="comsosknm21_knj" />
+    <result column="comsosk3_cod" jdbcType="CHAR" property="comsosk3_cod" />
+    <result column="comsosknm13_knj" jdbcType="VARCHAR" property="comsosknm13_knj" />
+    <result column="comhyojijun3_num" jdbcType="INTEGER" property="comhyojijun3_num" />
+    <result column="comsosk4_cod" jdbcType="CHAR" property="comsosk4_cod" />
+    <result column="comsosknm14_knj" jdbcType="VARCHAR" property="comsosknm14_knj" />
+    <result column="comhyojijun4_num" jdbcType="INTEGER" property="comhyojijun4_num" />
+    <result column="comsosk5_cod" jdbcType="CHAR" property="comsosk5_cod" />
+    <result column="comsosknm15_knj" jdbcType="VARCHAR" property="comsosknm15_knj" />
+    <result column="comhyojijun5_num" jdbcType="INTEGER" property="comhyojijun5_num" />
+    <result column="comsosk6_cod" jdbcType="CHAR" property="comsosk6_cod" />
+    <result column="comsosknm16_knj" jdbcType="VARCHAR" property="comsosknm16_knj" />
+    <result column="comhyojijun6_num" jdbcType="INTEGER" property="comhyojijun6_num" />
+    <result column="comtekiyoend_ymd" jdbcType="DATE" property="comtekiyoend_ymd" />
+  </resultMap>
+  <resultMap id="AffiliateSoskResultMap" type="com.wetech.ryutsumodel.model.dto.MicAComa014AffiliateSoskDto">
+    <!--<id column="comgyomu_kbn" jdbcType="SMALLINT" property="comgyomuKbn" />
+    <id column="comten_cod" jdbcType="CHAR" property="comTenCod" />
+    <id column="comtekiyostr_ymd" jdbcType="DATE" property="comtekiyostrYmd" />-->
+    <result column="comsosk3_cod" jdbcType="CHAR" property="comSosk3Cod" />
+    <result column="comsosknm13_knj" jdbcType="VARCHAR" property="comSoskNm13" />
+    <result column="comsosk4_cod" jdbcType="CHAR" property="comSosk4Cod" />
+    <result column="comsosknm14_knj" jdbcType="VARCHAR" property="comSoskNm14" />
+    <result column="comsosk5_cod" jdbcType="CHAR" property="comSosk5Cod" />
+    <result column="comsosknm15_knj" jdbcType="VARCHAR" property="comSoskNm15" />
+    <result column="comsosknm21_knj" jdbcType="VARCHAR" property="comTenNm1" />
+   <!-- <result column="comtekiyoend_ymd" jdbcType="DATE" property="comtekiyoendYmd" />-->
+    <result column="comtenkaku_kbn" jdbcType="DATE" property="comTenkakuKbn" />
+  </resultMap>
+  <!-- 会社情報取得 -->
+	<select id="micACom05Sql001" resultMap="TenshoSearchResultMap">
+		SELECT
+			comsosk6_cod,
+			comsosknm16_knj,
+			comhyojijun6_num
+		FROM
+			tmmsoshiki t1
+		WHERE
+		    EXISTS
+		        (
+		            SELECT
+		                1
+		            FROM
+		                (
+		                    SELECT
+		                        t3.comten_cod,
+		                        t3.comgyomu_kbn,
+		                        t3.comtekiyostr_ymd
+		                    FROM
+		                        (
+		                            SELECT
+		                                t2.comten_cod,
+		                                t2.comgyomu_kbn,
+		                                t2.comtekiyostr_ymd,
+		                                ROW_NUMBER() OVER(PARTITION BY t2.comsosk6_cod, t2.comsosknm16_knj, t2.comhyojijun6_num) as row_num
+		                            FROM
+		                                tmmsoshiki t2
+		                            WHERE
+		                                EXISTS
+		                                    (
+		                                    	SELECT
+		                                    		1
+		                                    	FROM
+		                                    		tmhanyo
+		                                    	WHERE
+		                                    		str1 = t2.comsosk6_cod
+		                                    	AND
+		                                    		bunrui_cod = 'RIYOU_KAISYA_CD'
+		                                    )
+		                                AND
+		                                	t2.comgyomu_kbn = 21
+		                        		<!-- ロール≠SSCもしくはシステム管理者の場合 -->
+		                        		<if test="role != 'ssc' and role != 'sys_admin'">
+		                        		AND
+		                        			t2.comsosk6_cod = #{companyCode, jdbcType=VARCHAR}
+		                        		</if>
+		
+		                                AND
+		                                	#{date, jdbcType=DATE} BETWEEN t2.comtekiyostr_ymd AND t2.comtekiyoend_ymd
+		                        ) t3
+		                        WHERE
+		                            t3.row_num = 1
+		                ) t4
+		                WHERE
+		                    t1.comten_cod = t4.comten_cod
+		                AND
+		                    t1.comgyomu_kbn = t4.comgyomu_kbn
+		                AND
+		                    t1.comtekiyostr_ymd = t4.comtekiyostr_ymd
+		
+		        )
+		        ORDER BY
+		        	t1.comhyojijun6_num,
+		            t1.comsosk6_cod
+	</select>
+	
+	<!-- ブロック情報取得 -->
+	<select id="micACom05Sql002" resultMap="TenshoSearchResultMap">
+    	SELECT
+			A.COMSOSK5_COD,
+			A.COMSOSKNM15_KNJ,
+			A.COMHYOJIJUN5_NUM
+		FROM
+		    tmmsoshiki A
+		WHERE
+		    EXISTS
+		        (
+		            SELECT
+		                1
+		            FROM
+		                (
+		                    SELECT
+		                        S.comten_cod,
+		                        S.comgyomu_kbn,
+		                        S.comtekiyostr_ymd
+		                    FROM
+		                        (
+		                            SELECT
+		                                B.comten_cod,
+		                                B.comgyomu_kbn,
+		                                B.comtekiyostr_ymd,
+		                            	B.comsosk5_cod,
+		                            	B.comsosknm15_knj,
+		                            	B.comhyojijun5_num,
+		                                ROW_NUMBER() OVER(PARTITION BY B.comhyojijun5_num, B.comsosk5_cod, B.comsosknm15_knj) AS row_num
+		                            FROM
+		                                tmmsoshiki B
+		                            WHERE
+		                            	B.comsosk6_cod = #{companyCode, jdbcType=VARCHAR}
+		                            AND
+		                            	B.comgyomu_kbn = 21
+		                            AND
+		                            	#{date, jdbcType=DATE} BETWEEN B.COMTEKIYOSTR_YMD AND B.COMTEKIYOEND_YMD
+		                        ) S
+		                    WHERE
+		                        S.row_num = 1
+		                )S2
+		            WHERE
+		                A.comten_cod = S2.comten_cod
+		            AND
+		                A.comgyomu_kbn = S2.comgyomu_kbn
+		            AND
+		                A.comtekiyostr_ymd = S2.comtekiyostr_ymd
+		        )
+		        ORDER BY
+		            A.COMHYOJIJUN5_NUM,
+		        	A.COMSOSK5_COD,
+		        	A.COMSOSKNM15_KNJ
+	</select>
+	
+	<!-- 特定支店情報取得 -->
+	<select id="micACom05Sql003" resultMap="TenshoSearchResultMap">
+        SELECT
+            A.comsosk4_cod,
+            A.comsosknm14_knj,
+            A.comhyojijun4_num
+        FROM
+            tmmsoshiki A
+        WHERE
+            EXISTS
+                (
+                    SELECT
+                        1
+                    FROM
+                        (
+                            SELECT
+                                S.comten_cod,
+                                S.comgyomu_kbn,
+                                S.comtekiyostr_ymd
+                            FROM
+                                (
+                                    SELECT
+                                        B.comten_cod,
+                                        B.comgyomu_kbn,
+                                        B.comtekiyostr_ymd,
+                                        B.comsosk4_cod,
+                                        B.comsosknm14_knj,
+                                        B.comhyojijun4_num,
+                                        ROW_NUMBER() OVER(PARTITION BY B.comhyojijun4_num, B.comsosk4_cod, B.comsosknm14_knj) AS row_num
+                                    FROM
+                                        tmmsoshiki B
+                                    WHERE
+                                        B.comsosk6_cod = #{companyCode, jdbcType=VARCHAR}
+                                    AND
+                                        B.comsosk5_cod = #{blockCode, jdbcType=VARCHAR}
+                                    AND
+                                        B.comgyomu_kbn = 21
+                                    AND
+                                        #{date, jdbcType=DATE} BETWEEN B.COMTEKIYOSTR_YMD AND B.comtekiyoend_ymd
+                                ) S
+                            WHERE
+                                S.row_num = 1
+                        )S2
+                    WHERE
+                        A.comten_cod = S2.comten_cod
+                    AND
+                        A.comgyomu_kbn = S2.comgyomu_kbn
+                    AND
+                        A.comtekiyostr_ymd = S2.comtekiyostr_ymd
+                )
+                ORDER BY
+                    A.comhyojijun4_num,
+                    A.comsosk4_cod,
+                    A.comsosknm14_knj
+	</select>
+
+	<!-- 支店情報取得 -->
+	<select id="micACom05Sql004" resultMap="TenshoSearchResultMap">
+        SELECT
+            A.comsosk3_cod,
+            A.comsosknm13_knj,
+            A.comhyojijun3_num
+        FROM
+            tmmsoshiki A
+        WHERE
+            EXISTS
+                (
+                    SELECT
+                        1
+                    FROM
+                        (
+                            SELECT
+                                S.comten_cod,
+                                S.comgyomu_kbn,
+                                S.comtekiyostr_ymd
+                            FROM
+                                (
+                                    SELECT
+                                        B.comten_cod,
+                                        B.comgyomu_kbn,
+                                        B.comtekiyostr_ymd,
+                                        B.comsosk3_cod,
+                                        B.comsosknm13_knj,
+                                        B.comhyojijun3_num,
+                                        ROW_NUMBER() OVER(PARTITION BY B.comhyojijun3_num, B.comsosk3_cod, B.comsosknm13_knj) AS row_num
+                                    FROM
+                                        tmmsoshiki B
+                                    WHERE
+                                        B.comsosk6_cod = #{companyCode, jdbcType=VARCHAR}
+                                    AND
+                                        B.comsosk5_cod = #{blockCode, jdbcType=VARCHAR}
+                                    AND
+                                        B.comsosk4_cod = #{tokuteiShitenCode, jdbcType=VARCHAR}
+                                    AND
+                                        B.comgyomu_kbn = 21
+                                    AND
+                                        #{date, jdbcType=DATE} BETWEEN B.comtekiyostr_ymd AND B.comtekiyoend_ymd
+                                ) S
+                            WHERE
+                                S.row_num = 1
+                        )S2
+                    WHERE
+                        A.comten_cod = S2.comten_cod
+                    AND
+                        A.comgyomu_kbn = S2.comgyomu_kbn
+                    AND
+                        A.comtekiyostr_ymd = S2.comtekiyostr_ymd
+                )
+                ORDER BY
+                    A.comhyojijun3_num,
+                    A.comsosk3_cod,
+                    A.comsosknm13_knj
+	</select>
+
+	<!-- 店所情報取得 -->
+	<select id="micACom05Sql005" resultMap="TenshoSearchResultMap">
+		SELECT
+			A.COMSOSK2_COD,
+			A.COMSOSKNM21_KNJ,
+			A.COMHYOJIJUN2_NUM
+		FROM
+		    tmmsoshiki A
+		WHERE
+		    EXISTS
+		        (
+		            SELECT
+		                1
+		            FROM
+		                (
+		                    SELECT
+		                        S.comten_cod,
+		                        S.comgyomu_kbn,
+		                        S.comtekiyostr_ymd
+		                    FROM
+		                        (
+		                            SELECT
+		                                B.comten_cod,
+		                                B.comgyomu_kbn,
+		                                B.comtekiyostr_ymd,
+		                            	B.comsosk2_cod,
+		                            	B.comsosknm21_knj,
+		                            	B.comhyojijun2_num,
+		                                ROW_NUMBER() OVER(PARTITION BY B.comhyojijun2_num, B.comsosk2_cod, B.comsosknm21_knj) AS row_num
+		                            FROM
+		                                tmmsoshiki B
+		                            WHERE
+		                                B.comsosk6_cod = #{companyCode, jdbcType=VARCHAR}
+		                            AND
+		                                B.comsosk5_cod = #{blockCode, jdbcType=VARCHAR}
+		                            AND
+		                                B.comsosk4_cod = #{tokuteiShitenCode, jdbcType=VARCHAR}
+		                            AND
+		                                B.comsosk3_cod = #{shitenCode, jdbcType=VARCHAR}
+		                            AND
+		                            	B.comgyomu_kbn = 21
+		                            AND
+		                            	#{date, jdbcType=DATE} BETWEEN B.comtekiyostr_ymd AND B.comtekiyoend_ymd
+		                        ) S
+		                    WHERE
+		                        S.row_num = 1
+		                )S2
+		            WHERE
+		                A.comten_cod = S2.comten_cod
+		            AND
+		                A.comgyomu_kbn = S2.comgyomu_kbn
+		            AND
+		                A.comtekiyostr_ymd = S2.comtekiyostr_ymd
+		        )
+		        ORDER BY
+		            A.comhyojijun2_num,
+		            A.comsosk2_cod,
+		        	A.comsosknm21_knj
+	</select>
+
+	<!-- 所属組織階層取得 -->
+	<select id="micACom05Sql006" resultMap="AffiliateSoskResultMap">
+		SELECT		
+			tmmsoshiki.comsosk5_cod,
+			tmmsoshiki.comsosknm15_knj,
+			tmmsoshiki.comsosk4_cod,
+			tmmsoshiki.comsosknm14_knj,
+			tmmsoshiki.comsosk3_cod,
+			tmmsoshiki.comsosknm13_knj,
+			tmmsoshiki.comsosknm21_knj,
+			tmmgyomutenkaku.comtenkaku_kbn
+		FROM
+			tmmsoshiki
+		INNER JOIN
+		    tmmgyomutenkaku
+		ON
+		    tmmsoshiki.comsosk2_cod = tmmgyomutenkaku.comten_cod
+		WHERE
+		    EXISTS
+		        (
+		            SELECT 
+		                *
+		            FROM
+		                tmmgyomutenkaku g
+		            WHERE
+		                tmmsoshiki.comsosk2_cod = g.comten_cod
+		        )
+		    AND
+				tmmsoshiki.comsosk6_cod = #{companyCode, jdbcType=VARCHAR}	
+			AND		
+				tmmsoshiki.comsosk2_cod = #{tenshoCode, jdbcType=VARCHAR}
+		    AND
+		    	tmmsoshiki.comgyomu_kbn = 21
+		    AND
+		    	tmmgyomutenkaku.comgyomu_kbn = 21
+		    AND	
+		    	#{date, jdbcType=DATE} BETWEEN tmmsoshiki.comtekiyostr_ymd AND tmmsoshiki.comtekiyoend_ymd
+		    AND
+		    	#{date, jdbcType=DATE} BETWEEN tmmgyomutenkaku.comtekiyostr_ymd AND tmmgyomutenkaku.comtekiyoend_ymd
+		    LIMIT 1
+	</select>
+
+	<!-- 経理店判別 -->
+	<select id="micACom05Sql007" resultType="java.lang.Long">
+	SELECT 
+	    COALESCE(A.F2, '0')
+	FROM 
+	(
+	    SELECT 
+	        #{tenshoCode, jdbcType=VARCHAR} F1,
+	        (
+	            SELECT
+	                CASE 
+	                    WHEN tmmbumonnayosemi.jcmbumon_cod IS NOT NULL THEN '1' 
+	                ELSE 
+	                    '0' 
+	                END comkeiri_kbn
+	            FROM
+	                tmmbumonnayosemi
+	            WHERE
+	                tmmbumonnayosemi.jcmnayosekanri_cod = #{tenshoCode, jdbcType=VARCHAR}
+	            AND
+	            	tmmbumonnayosemi.jcmsaimutegata_kbn = '4'
+	            AND
+			         #{date, jdbcType=DATE} BETWEEN tmmbumonnayosemi.jcmtekiyostr_ymd AND tmmbumonnayosemi.jcmtekiyoend_ymd
+	            ORDER BY 
+	                tmmbumonnayosemi.jcmbumon_cod
+	            limit 1
+	        ) F2
+	) A
+	</select>
+</mapper>
