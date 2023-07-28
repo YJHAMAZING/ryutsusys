@@ -23,4 +23,6 @@ public interface TmhanyoMapper {
     int updateByPrimaryKey(Tmhanyo record);
 
     List<Tmhanyo> selectByExample(TmhanyoExample hanyoExample);
+
+    String test(String a);
 }
