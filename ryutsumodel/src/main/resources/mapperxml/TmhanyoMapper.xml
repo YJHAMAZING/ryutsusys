@@ -441,4 +441,15 @@
       order by ${orderByClause}
     </if>
     </select>
+
+  <select id="test" resultType="java.lang.String">
+    select
+        kbn1
+    from
+      tmhanyo
+    where
+      kbn2 = 4 and 1=1
+  </select>
+
+
 </mapper>

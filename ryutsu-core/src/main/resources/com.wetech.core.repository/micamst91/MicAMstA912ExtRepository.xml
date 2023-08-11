@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.wetech.core.repository.micamst91.MicAMstA912ExtRepository">
+
+	 <select id="MicAMst91Sql002" parameterType="String" resultType="com.wetech.ryutsumodel.model.dto.TmmJininDto">
+	 <![CDATA[
+        select 
+            comjugyoin_cod as "tantoshaCode",
+            comshimeisei_knj as "tantoshaNameSei",
+            comshimeimei_knj as "tantoshaNameMei"
+        from
+            tmmjinin
+        where
+            comsozten_cod = #{tenshoCode,jdbcType=CHAR}
+        and
+            current_date <= comtekiyoend_ymd
+        and
+            current_date >= comtekiyostr_ymd
+        order by
+            comjugyoin_cod
+        asc
+        ;
+        ]]>
+    </select>
+    
+</mapper>

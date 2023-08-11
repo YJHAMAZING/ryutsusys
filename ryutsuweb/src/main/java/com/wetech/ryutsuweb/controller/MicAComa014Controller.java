@@ -3,12 +3,10 @@ package com.wetech.ryutsuweb.controller;
 import com.wetech.core.service.MicAComa014Service;
 import com.wetech.ryutsumodel.model.dto.MicAComa014InputDto;
 import com.wetech.ryutsumodel.model.dto.MicAComa014OutputDto;
+import com.wetech.ryutsumodel.model.mapper.TmhanyoMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/mst")
@@ -16,6 +14,9 @@ public class MicAComa014Controller {
 
     @Autowired
     private MicAComa014Service micAComa014Service;
+
+    @Autowired
+    private TmhanyoMapper tmhanyoMapper;
 
     /**
      * 初期表示データ取得
@@ -25,5 +26,11 @@ public class MicAComa014Controller {
 
         MicAComa014OutputDto micAComa014OutputDto = micAComa014Service.getRecord(micAComa014InputDto);
         return ResponseEntity.ok(micAComa014OutputDto);
+    }
+
+    @GetMapping("/ok")
+    public String test() {
+        String a =tmhanyoMapper.test("a");
+        return a;
     }
 }
